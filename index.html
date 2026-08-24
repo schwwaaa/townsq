@@ -29,15 +29,20 @@
     </script>
 </head>
 
-<body>
+<body class="high-resolution low-bandwidth">
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="lowland-world" aria-hidden="true"></div>
+    <div class="lowland-fizzle" aria-hidden="true"></div>
 
-    <div class="system-strip" role="banner">
-        <span>⚡ SYSTEM STATUS: <b>ALL SYSTEMS SMILING</b> ☺</span>
-        <span>GLOBAL UPTIME: <b>99.999%*</b></span>
-        <span>TRUST US.</span>
-        <button class="tiny-mode" type="button" aria-pressed="false">low bandwidth</button>
-    </div>
+    <!-- <div class="system-strip" role="banner">
+        <span class="system-title"><i aria-hidden="true"></i>welcome to schwwaaa</span>
+        <span class="resolution-controls" aria-label="Resolution mode selector">
+            <span>BANDWIDTH:</span>
+        <button class="resolution-button resolution-button-high" type="button" data-resolution="high" aria-pressed="true">HIGH RES</button>
+        <span class="resolution-divider" aria-hidden="true">|</span>
+        <button class="resolution-button resolution-button-low tiny-mode" type="button" data-resolution="low" aria-pressed="false">LOW RES</button>
+        </span>
+    </div> -->
 
     <header class="site-header" id="top">
 
@@ -46,7 +51,8 @@
             <a class="brand" href="#top" aria-label="schwwaaa homepage">
                 <img src="assets/schwwaaa-logo.png" alt="schwwaaa">
             </a>
-            <p class="tagline">Shaping tomorrow ... today 塩カ畏 🌈™</p>
+            <p class="tagline">Shaping tomorrow ... today</p>
+            <!-- <p class="tagline">Shaping tomorrow ... today 塩カ畏 🌈™</p> -->
         </div>
 
         <!-- <form class="member-access" action="#search" aria-label="member access login">
@@ -78,70 +84,113 @@
     <div class="page-grid" id="home">
 
         <section class="hero-map panel" id="map" aria-labelledby="welcome-title">
-            <div class="panel-title"><span></span>
+            <!-- <div class="panel-title"><span></span>
                 <h1 id="welcome-title">welcome to schwwaaa</h1>
-            </div>
-            <div class="map-stage town-stage">
-                <div class="town-status">TownView™ / civic infrastructure district / click a block to move</div>
-                <div class="town-board" role="img" aria-label="A retro 2.5D videogame-style town map using the Schwwaaa district icons.">
-                    <div class="iso-ground"></div>
-                    <div class="iso-street street-main"></div>
-                    <div class="iso-street street-cross"></div>
-                    <div class="iso-street street-upper"></div>
-                    <div class="iso-street street-lower"></div>
-                    <div class="iso-canal"></div>
+            </div> -->
+            <!-- <div class="system-strip" role="banner">
+                <span class="system-title"><i aria-hidden="true"></i>welcome to schwwaaa</span>
+                <span class="resolution-controls" aria-label="Resolution mode selector">
+            <span>BANDWIDTH:</span>
+                <button class="resolution-button resolution-button-high" type="button" data-resolution="high" aria-pressed="true">HIGH RES</button>
+                <span class="resolution-divider" aria-hidden="true">|</span>
+                <button class="resolution-button resolution-button-low tiny-mode" type="button" data-resolution="low" aria-pressed="false">LOW RES</button>
+                </span>
+            </div> -->
+            <div class="map-stage town-stage office-park-stage">
+                <div class="town-board office-park-board campus-map-desktop" role="img" aria-label="An isometric office park map showing the Schwwaaa campus as a navigable low-bandwidth corporate campus.">
+                    <img class="office-map-art generated-office-park-map generated-office-park-map--high" src="assets/office-park-map-generated.png" alt="Isometric 2.5D office park map for Schwwaaa, with connected roads and a corporate campus layout.">
+                    <img class="office-map-art generated-office-park-map generated-office-park-map--low" src="assets/office-park-map-lowland-v23.png" alt="Low-resolution Schwwaaa campus map with roads dissolved into grass.">
 
                     <a class="town-node node-info" href="#info">
-                        <span class="map-tile"><i class="ico booth"></i></span>
-                        <b>1 Info Booth</b><em>start here</em>
-                    </a>
-                    <a class="town-node node-plaza" href="#plaza">
-                        <span class="map-tile tile-plaza"><i class="ico plaza"></i></span>
-                        <b>2 Plaza</b><em>public square</em>
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-info-booth.svg"
+                                alt=""></span>
+                        <b>1 Info Booth</b><em>visitor center</em>
                     </a>
                     <a class="town-node node-labs" href="#labs">
-                        <span class="map-tile tile-labs"><i class="ico lab"></i></span>
-                        <b>3 Labs</b><em>prototype dome</em>
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-labs.svg"
+                                alt=""></span>
+                        <b>2 Labs</b><em>prototype campus</em>
                     </a>
                     <a class="town-node node-facility" href="#services">
-                        <span class="map-tile tile-facility"><i class="ico factory"></i></span>
-                        <b>4 Facility Grid</b><em>service works</em>
-                    </a>
-                    <a class="town-node node-press" href="#pressroom">
-                        <span class="map-tile"><i class="ico press"></i></span>
-                        <b>5 Press Room</b><em>bulletins</em>
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-facility-grid.svg"
+                                alt=""></span>
+                        <b>3 Facility Grid</b><em>service works</em>
                     </a>
                     <a class="town-node node-investor" href="#investors">
-                        <span class="map-tile tile-investor"><i class="ico tower"></i></span>
-                        <b>6 Investor Hall</b><em>numbers & trust</em>
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-investor-hall.svg"
+                                alt=""></span>
+                        <b>4 Investor Hall</b><em>numbers & trust</em>
                     </a>
                     <a class="town-node node-projects" href="projects.html">
-                        <span class="map-tile"><i class="ico archive"></i></span>
-                        <b>7 Project Block</b><em>catalog</em>
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-project-block.svg"
+                                alt=""></span>
+                        <b>5 Project Block</b><em>catalog</em>
+                    </a>
+                    <!-- BEGIN COMMENTED OUT: Central Commons desktop map pin
+                    <a class="town-node node-plaza" href="#plaza">
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-plaza.svg" alt=""></span>
+                        <b>6 Central Commons</b><em>shared court</em>
+                    </a>
+                    END COMMENTED OUT: Central Commons desktop map pin -->
+                    <a class="town-node node-press" href="#pressroom">
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-press-room.svg"
+                                alt=""></span>
+                        <b>7 Press Room</b><em>bulletins</em>
                     </a>
                     <a class="town-node node-help" href="#contact">
-                        <span class="map-tile"><i class="ico help"></i></span>
+                        <span class="map-marker"><img class="map-icon-img" src="assets/icons/map-help-desk.svg"
+                                alt=""></span>
                         <b>8 Help Desk</b><em>human-ish</em>
                     </a>
-
-                    <div class="plaza-core" aria-hidden="true"><i class="ico plaza"></i><b>central plaza</b></div>
-                    <i class="iso-tree tree-a"></i><i class="iso-tree tree-b"></i><i class="iso-tree tree-c"></i><i class="iso-tree tree-d"></i><i class="iso-tree tree-e"></i><i class="iso-tree tree-f"></i>
-                    <i class="pixel-person person-a"></i><i class="pixel-person person-b"></i><i class="pixel-person person-c"></i><i class="pixel-person person-d"></i>
                 </div>
-                <div class="tour-note">A strangely efficient district built for builders, thinkers, and misfits.<br><a href="#about">&gt;&gt; take the tour</a></div>
-                <div class="map-key"><b>MAP KEY</b>
-                    <ol>
-                        <li>Info Booth</li>
-                        <li>Plaza</li>
-                        <li>Labs</li>
-                        <li>Facility Grid</li>
-                        <li>Press Room</li>
-                        <li>Investor Hall</li>
-                        <li>Project Block</li>
-                        <li>Help Desk</li>
-                    </ol><em>SCH</em></div>
+                <div class="campus-map-mobile" aria-label="Schwwaaa campus district selector">
+                    <div class="mobile-map-preview">
+                        <img src="assets/office-park-map-generated.png" alt="Schwwaaa isometric office park map preview">
+                        <span>townview mobile</span>
+                    </div>
+                    <nav class="district-list" aria-label="Schwwaaa campus locations">
+                        <a class="district-card" href="#info">
+                            <img src="assets/icons/map-info-booth.svg" alt="">
+                            <span><b>Info Booth</b><em>visitor center / orientation</em></span>
+                        </a>
+                        <a class="district-card" href="#labs">
+                            <img src="assets/icons/map-labs.svg" alt="">
+                            <span><b>Labs</b><em>prototype campus / experiments</em></span>
+                        </a>
+                        <a class="district-card" href="#services">
+                            <img src="assets/icons/map-facility-grid.svg" alt="">
+                            <span><b>Facility Grid</b><em>solution architecting / system work</em></span>
+                        </a>
+                        <a class="district-card" href="#investors">
+                            <img src="assets/icons/map-investor-hall.svg" alt="">
+                            <span><b>Investor Hall</b><em>numbers, trust, and institutional fog</em></span>
+                        </a>
+                        <a class="district-card" href="projects.html">
+                            <img src="assets/icons/map-project-block.svg" alt="">
+                            <span><b>Project Block</b><em>catalog of strange useful systems</em></span>
+                        </a>
+                        <!-- BEGIN COMMENTED OUT: Central Commons mobile district card
+                        <a class="district-card" href="#plaza">
+                            <img src="assets/icons/map-plaza.svg" alt="">
+                            <span><b>Central Commons</b><em>shared court / public weirdness</em></span>
+                        </a>
+                        END COMMENTED OUT: Central Commons mobile district card -->
+                        <a class="district-card" href="#pressroom">
+                            <img src="assets/icons/map-press-room.svg" alt="">
+                            <span><b>Press Room</b><em>bulletins, claims, artifacts</em></span>
+                        </a>
+                        <a class="district-card" href="#contact">
+                            <img src="assets/icons/map-help-desk.svg" alt="">
+                            <span><b>Help Desk</b><em>talk to a human-ish operator</em></span>
+                        </a>
+                    </nav>
+                </div>
             </div>
-            <footer class="map-footer">citizen status: guest <span><a href="#login">become a member</a> | <a href="#about">why join?</a></span></footer>
+            <footer class="map-footer">CITIZEN STATUS: GUEST <span>
+                <a href="https://www.youtube.com/watch?v=e7QLoMve8BE">BECOME A MEMBER</a> 
+                <!-- | <a href="#about">WHY JOIN?</a> -->
+            </span>
+            </footer>
         </section>
 
         <aside class="left-rail" aria-label="World navigation">
@@ -219,62 +268,105 @@ END COMMENTED OUT: mailing list -->
                 </div>
                 <div class="service-grid">
                     <article>
-                        <i class="service-symbol architect"></i>
+                        <img class="service-icon-img" src="assets/icons/service-solution-architecting.svg" alt="" loading="lazy">
                         <h3>Solution architecting</h3>
-                        <p>Designing future-proof systems from napkin to network topology.</p>
-                        <a href="#contact">&gt;&gt; learn more</a>
+                        <!-- <p>Designing future-proof systems from napkin to network topology.</p> -->
+                        <!-- <a href="#contact">&gt;&gt; learn more</a> -->
                     </article>
                     <article>
-                        <i class="service-symbol audit"></i>
+                        <img class="service-icon-img" src="assets/icons/service-system-auditing.svg" alt="" loading="lazy">
                         <h3>System auditing</h3>
-                        <p>We poke, prod, and profile your systems so you don’t have to.</p>
-                        <a href="#contact">&gt;&gt; learn more</a>
+                        <!-- <p>We poke, prod, and profile your systems so you don’t have to.</p> -->
+                        <!-- <a href="#contact">&gt;&gt; learn more</a> -->
                     </article>
                     <article>
-                        <i class="service-symbol dev"></i>
+                        <img class="service-icon-img" src="assets/icons/service-software-development.svg" alt="" loading="lazy">
                         <h3>Software development</h3>
-                        <p>Custom code for custom problems. Scalable. Weird.</p>
-                        <a href="#contact">&gt;&gt; learn more</a>
+                        <!-- <p>Custom code for custom problems. Scalable. Weird.</p> -->
+                        <!-- <a href="#contact">&gt;&gt; learn more</a> -->
                     </article>
                     <article>
-                        <i class="service-symbol proto"></i>
+                        <img class="service-icon-img" src="assets/icons/service-prototyping.svg" alt="" loading="lazy">
                         <h3>Prototyping</h3>
-                        <p>From sketches to clicks to chaos. Fast, scrappy, real.</p>
-                        <a href="#contact">&gt;&gt; learn more</a>
+                        <!-- <p>From sketches to clicks to chaos. Fast, scrappy, real.</p> -->
+                        <!-- <a href="#contact">&gt;&gt; learn more</a> -->
                     </article>
                 </div>
             </section>
 
             <section class="panel project-panel" id="projects" aria-labelledby="projects-title">
                 <div class="panel-title panel-title-link"><span></span>
-                    <h2 id="projects-title">project catalog</h2><a href="projects.html">view all projects</a></div>
+                    <h2 id="projects-title">project catalog</h2>
+                    <a href="projects.html"></a>
+                </div>
                 <div class="project-grid">
-                    <article><i class="project-icon tv"></i>
+                    <article><img class="project-icon-img" src="assets/icons/videobeaux.png" alt="" loading="lazy">
                         <h3>Videobeaux</h3>
-                        <p>Broadcast the unreal.</p><a href="projects.html#videobeaux">view project</a></article>
-                    <article><i class="project-icon eye"></i>
-                        <h3>Viewfinder</h3>
-                        <p>See beyond the frame.</p><a href="projects.html#viewfinder">view project</a></article>
-                    <article><i class="project-icon gate"></i>
-                        <h3>Api-gateway</h3>
-                        <p>Routes to everywhere.</p><a href="projects.html#api-gateway">view project</a></article>
-                    <article><i class="project-icon mouth"></i>
-                        <h3>Scoping-voices</h3>
-                        <p>Many voices. One scope.</p><a href="projects.html#scoping-voices">view project</a></article>
-                    <article><i class="project-icon monster"></i>
-                        <h3>Kowabungataug</h3>
-                        <p>Big. Loud. Unapologetic.</p><a href="projects.html#kowabungataug">view project</a></article>
-                    <article><i class="project-icon factory"></i>
-                        <h3>Illogica Factory</h3>
-                        <p>Make logic bend.</p><a href="projects.html#illogica-factory">view project</a></article>
-                    <article><i class="project-icon vault"></i>
-                        <h3>Ordvault</h3>
-                        <p>Order is a vault.</p><a href="projects.html#ordvault">view project</a></article>
-                    <article><i class="project-icon globe"></i>
+                        <!-- <p>Broadcast the unreal.</p> -->
+                        <a href="https://videobeaux.online">view project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/adslicer.png" alt="" loading="lazy">
+                        <h3>AdSlicer</h3>
+                        <!-- <p>See beyond the frame.</p> -->
+                        <a href="https://schwwaaa.github.io/AdSlicer/">view project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/dropzoneops.png" alt="" loading="lazy">
+                        <h3>drop-zone-ops</h3>
+                        <!-- <p>Many voices. One scope.</p> -->
+                        <a href="https://schwwaaa.github.io/drop-zone-ops/">view project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/huff.png" alt="" loading="lazy">
+                        <h3>huff</h3>
+                        <!-- <p>Many voices. One scope.</p> -->
+                        <a href="https://schwwaaa.github.io/huff">view project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/rpi.png" alt="" loading="lazy">
+                        <h3>Raspi Composite Player</h3>
+                        <!-- <p>Big. Loud. Unapologetic.</p> -->
+                        <a href="https://schwwaaa.github.io/raspi-composite-player/">view project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/mastacraf.png" alt="" loading="lazy">
+                        <h3>mastacraf</h3>
+                        <!-- <p>Make logic bend.</p> -->
+                        <a href="https://schwwaaa.github.io/mastacraf/">view project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/vs10.png" alt="" loading="lazy">
+                        <h3>VideoSampler10_VS10</h3>
+                        <!-- <p>a tiny browser based video sampler for slicing local video into playable pads</p> -->
+                        <a href="https://schwwaaa.github.io/VideoSampler10_VS10/">view project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/webglo.png" alt="" loading="lazy">
                         <h3>Webglo</h3>
-                        <p>The web, but brighter.</p><a href="projects.html#webglo">view project</a></article>
+                        <!-- <p>decentralized video art on the Bitcoin blockchain.</p> -->
+                        <a href="https://webglo.online">view
+                            project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/turrrbo.png" alt="" loading="lazy">
+                        <h3>TURRRBO</h3>
+                        <!-- <p>decentralized video art on the Bitcoin blockchain.</p> -->
+                        <a href="https://schwwaaa.github.io/TURRRBO/">view
+                            project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/junkpile.png" alt="" loading="lazy">
+                        <h3>junkpile</h3>
+                        <!-- <p>decentralized video art on the Bitcoin blockchain.</p> -->
+                        <a href="https://schwwaaa.github.io/junkpile/">view
+                            project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/illogicafactory.png" alt="" loading="lazy">
+                        <h3>illogica facotry</h3>
+                        <!-- <p>decentralized video art on the Bitcoin blockchain.</p> -->
+                        <a href="https://schwwaaa.github.io/illogica-factory">view
+                            project</a>
+                    </article>
+                    <article><img class="project-icon-img" src="assets/icons/obsrelay.png" alt="" loading="lazy">
+                        <h3>obs-relay</h3>
+                        <!-- <p>Routes to everywhere.</p> -->
+                        <a href="https://schwwaaa.github.io/obs-relay/">view project</a>
+                    </article>
                 </div>
             </section>
+
 
             <section class="bottom-utility">
                 <!-- <section class="panel search-portal">
@@ -331,21 +423,22 @@ END COMMENTED OUT: mailing list -->
                 <a href="#">&gt; more updates</a>
             </section>
 
-            <section class="factory-ad" id="labs">
+            <!-- <section class="factory-ad" id="labs">
                 <h2>NEW FROM<br>SCHWWAAA LABS</h2>
                 <b>ILLOGICA<br>FACTORY</b>
                 <span>MAKE<br>LOGIC<br>BEND!</span>
-                <a href="#projects">ENTER THE FACTORY →</a>
-            </section>
+                <a href="https://schwwaaa.github.io/illogica-factory">ENTER THE FACTORY →</a>
+            </section> -->
 
-            <section class="panel market" id="investors">
+            <!-- <section class="panel market" id="investors">
                 <h2>market pulse</h2>
-                <div class="sparkline" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="sparkline" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span></div>
                 <p><b>SCHW</b> <span>23.17</span> <strong>+1.37 ▲</strong></p>
-                <!-- <a href="#">&gt; investor dashboard</a> -->
-            </section>
+                <a href="#">&gt; investor dashboard</a>
+            </section> -->
 
-            <section class="paper-card" id="careers">
+            <!-- <section class="paper-card" id="careers">
                 <h2>CAREERS @<br>SCHWWAAA</h2>
                 <p>We build strange things with serious people.</p>
                 <ul>
@@ -356,7 +449,7 @@ END COMMENTED OUT: mailing list -->
                     <li><s>Meaningless Meetings</s></li>
                 </ul>
                 <a href="#contact">APPLY NOW</a>
-            </section>
+            </section> -->
             <section class="dreams-slot">
                 <div class="header-left-card" aria-hidden="true">
                     <div class="monitor-head"><span></span></div>
@@ -380,17 +473,17 @@ END COMMENTED OUT: mailing list -->
   </section> -->
 
     <footer class="site-footer" id="contact">
-        <div class="seal">SCH<br>WWAAA</div>
+        <!-- <div class="seal">SCH<br>WWAAA</div> -->
         <p>BE EXCELLENT<br>TO EACH OTHER.</p>
         <nav aria-label="Footer">
-            <a href="#top">Sitemap</a>
-            <a href="#careers">Careers</a>
+            <!-- <a href="#top">Sitemap</a> -->
+            <!-- <a href="#careers">Careers</a> -->
             <a href="#pressroom">Press Kit</a>
             <a href="#">Legal</a>
             <a href="#">Privacy</a>
             <a href="#">Accessibility</a>
         </nav>
-        <p class="footer-small">© 1999–2001 Schwwaaa, Inc. All rights reserved. Secured by paranoia. Built with caffeine. Hosted on the clouds.</p>
+        <p class="footer-small">© 1999–2001 Schwwaaa, Inc. All rights reserved. Secured by paranoia. Built with caffeine. Hosted in a basement.</p>
     </footer>
 
     <script src="script.js"></script>

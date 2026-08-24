@@ -112,7 +112,7 @@ img {
 }
 
 .brand-panel::after {
-    content: "schwwaaa public works interface / townview edition";
+    /* content: "schwwaaa public works interface / townview edition"; */
     position: relative;
     display: inline-block;
     margin-top: 10px;
@@ -150,7 +150,8 @@ img {
     width: max-content;
     max-width: 100%;
     padding: 8px 18px;
-    background: linear-gradient(90deg, #fff267 0 24%, #fff6c4 24% 48%, #efb5cf 48% 72%, #83b7ff 72%);
+    /* background: linear-gradient(90deg, #fff267 0 24%, #fff6c4 24% 48%, #efb5cf 48% 72%, #83b7ff 72%); */
+    background: white;
     border: 3px solid #000;
     box-shadow: var(--shadow);
     font: italic clamp(22px, 4.2vw, 42px)/1.05 Georgia, serif;
@@ -2105,4 +2106,3114 @@ img {
     .about-panel p {
         max-width: none;
     }
+}
+
+/* v8 office park low-bandwidth map refresh */
+.hero-map { overflow: hidden; }
+.office-park-stage {
+    position: relative;
+    min-height: 700px;
+    background: linear-gradient(180deg, #cfe2f3 0 16%, #dfe8cf 16% 48%, #cfddc2 48% 100%);
+    overflow: hidden;
+    border-top: 2px solid #726b61;
+}
+.office-park-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(255,255,255,.18), rgba(255,255,255,0) 22%), repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 1px, transparent 1px 96px);
+    pointer-events: none;
+}
+.office-park-board {
+    position: absolute;
+    inset: 44px 18px 22px;
+    border: 2px solid #000;
+    background: linear-gradient(180deg, #dfe8cf 0 100%);
+    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, .28);
+    overflow: hidden;
+}
+.low-bandwidth .office-park-board::before { display:none; }
+.office-ground {
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 1px, transparent 1px 140px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.09) 0 1px, transparent 1px 120px),
+      linear-gradient(180deg, #dce7cf, #c8d9bc);
+}
+.office-road {
+    position:absolute; z-index:1;
+    background:#7f847c; border:2px solid #585d57;
+    box-shadow: inset 0 0 0 6px #aab0a7;
+}
+.office-road::after {
+    content:""; position:absolute; left:0; right:0; top:50%; height:3px; transform:translateY(-50%);
+    background: repeating-linear-gradient(90deg, #fff 0 16px, transparent 16px 30px);
+}
+.road-loop-top{ left:8%; right:8%; top:9%; height:46px; }
+.road-loop-bottom{ left:8%; right:8%; bottom:10%; height:46px; }
+.road-loop-left{ left:9%; top:12%; bottom:13%; width:46px; }
+.road-loop-right{ right:9%; top:12%; bottom:13%; width:46px; }
+.road-loop-left::after, .road-loop-right::after, .road-cross-vertical::after { left:50%; top:0; bottom:0; width:3px; height:auto; right:auto; transform:translateX(-50%); background: repeating-linear-gradient(180deg, #fff 0 16px, transparent 16px 30px); }
+.road-cross-horizontal{ left:17%; right:17%; top:50%; height:40px; transform:translateY(-50%); }
+.road-cross-vertical{ top:19%; bottom:19%; left:50%; width:40px; transform:translateX(-50%); }
+.road-link-a{ left:27%; top:29%; width:18%; height:34px; transform:rotate(-28deg); }
+.road-link-b{ right:24%; top:31%; width:17%; height:34px; transform:rotate(28deg); }
+.road-link-c{ left:33%; bottom:24%; width:34%; height:30px; }
+.campus-lot {
+    position:absolute; z-index:2; width:168px; height:118px;
+    background:#ece7dc; border:2px solid #555; box-shadow: 3px 3px 0 rgba(0,0,0,.18);
+}
+.campus-lot::before{ content:""; position:absolute; inset:9px; border:1px solid rgba(0,0,0,.18); }
+.campus-lot .lot-building, .campus-lot .lot-annex{ position:absolute; background:#f8f6ef; border:2px solid #555; }
+.campus-lot .lot-building::before, .campus-lot .lot-annex::before{ content:""; position:absolute; inset:4px; background: repeating-linear-gradient(90deg, #cfd6dc 0 5px, #eff2f4 5px 10px); }
+.campus-lot .lot-building{ left:16px; top:16px; width:74px; height:44px; }
+.campus-lot .lot-annex{ right:16px; bottom:18px; width:52px; height:34px; }
+.campus-lot .lot-parking{ position:absolute; left:12px; right:12px; bottom:10px; height:22px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.9) 0 2px, transparent 2px 17px), #8e948b; border:2px solid #666; }
+.campus-lot.lot-plaza .lot-building, .campus-lot.lot-plaza .lot-annex{ border-radius:18px; }
+.campus-lot.lot-labs .lot-building::before{ background: repeating-linear-gradient(90deg, #d2f5ff 0 5px, #f2ffff 5px 10px); }
+.campus-lot.lot-facility .lot-building{ background:#dbd6cb; }
+.campus-lot.lot-investor .lot-building::before{ background: repeating-linear-gradient(90deg, #d7ecd8 0 5px, #f1faf1 5px 10px); }
+.campus-lot.lot-projects .lot-building::before{ background: repeating-linear-gradient(90deg, #dedede 0 5px, #fafafa 5px 10px); }
+.campus-lot.lot-press .lot-building::before{ background: repeating-linear-gradient(90deg, #efefef 0 4px, #ffffff 4px 8px); }
+.campus-lot.lot-help .lot-building::before{ background: repeating-linear-gradient(90deg, #f9efbe 0 5px, #fff8e6 5px 10px); }
+.lot-info{ left:9%; top:18%; }
+.lot-labs{ left:40%; top:11%; }
+.lot-facility{ right:12%; top:18%; }
+.lot-projects{ left:12%; bottom:16%; }
+.lot-plaza{ left:29%; bottom:19%; }
+.lot-help{ left:58%; bottom:14%; }
+.lot-press{ right:19%; bottom:20%; }
+.lot-investor{ right:8%; top:48%; }
+.campus-core {
+    width:122px; height:122px; left:50%; top:52%; z-index:4;
+    border:4px solid #000; background:#ddd171; box-shadow: var(--shadow);
+}
+.campus-core::before{ content:""; position:absolute; inset:-12px; border:10px solid rgba(101,131,98,.35); border-radius:50%; }
+.office-tree {
+    position:absolute; z-index:3; width:18px; height:30px; border:2px solid #325332;
+    border-radius:16px 16px 10px 10px; background:#479946;
+}
+.office-tree::after{ content:""; position:absolute; left:6px; bottom:-9px; width:4px; height:10px; background:#6d4d32; border:1px solid #000; }
+.tree-a{ left:25%; top:19%; } .tree-b{ left:33%; top:28%; } .tree-c{ left:59%; top:17%; } .tree-d{ right:25%; top:44%; } .tree-e{ left:28%; bottom:29%; } .tree-f{ left:54%; bottom:20%; } .tree-g{ right:17%; bottom:30%; } .tree-h{ right:31%; bottom:18%; }
+.office-car{ position:absolute; z-index:2; width:16px; height:8px; background:#2f5fa7; border:1px solid #000; border-radius:3px; }
+.car-a{ left:18%; top:11%; } .car-b{ right:17%; top:11%; background:#d14d43; } .car-c{ left:15%; bottom:9%; background:#478e42; } .car-d{ right:18%; bottom:10%; background:#d0a11c; }
+.tour-note { left: 30px; top: 76px; width: 270px; z-index: 8; }
+.map-key { right: 30px; top: 76px; width: 210px; z-index:8; }
+.town-node { z-index:6; width:146px; background: rgba(255,255,255,.96); }
+.node-info{ left: 11%; top: 7%; }
+.node-labs{ left: 43%; top: 2%; }
+.node-facility{ right: 11%; top: 7%; }
+.node-investor{ right: 3%; top: 39%; }
+.node-projects{ left: 8%; bottom: 4%; }
+.node-plaza{ left: 28%; bottom: 1%; }
+.node-press{ right: 19%; bottom: 4%; }
+.node-help{ left: 56%; bottom: 0%; }
+.map-tile { width: 68px; height: 54px; }
+.map-tile .ico { transform: scale(1.38); }
+.low-bandwidth .office-road { box-shadow: inset 0 0 0 4px #aab0a7; }
+.low-bandwidth .campus-lot { box-shadow: none; }
+.low-bandwidth .office-ground { background: repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 1px, transparent 1px 140px), linear-gradient(180deg, #dde6d0, #cbdabc); }
+.low-bandwidth .office-tree, .low-bandwidth .office-car { display:block; }
+@media (max-width: 1200px){
+  .office-park-stage{ min-height: 720px; }
+  .office-park-board{ inset:44px 12px 20px; }
+  .town-node{ width:138px; }
+  .lot-info{ left:6%; }
+  .lot-facility{ right:8%; }
+}
+@media (max-width: 900px){
+  .office-park-stage{ min-height: 860px; }
+  .tour-note{ left:18px; top:72px; width:240px; }
+  .map-key{ right:18px; top:72px; width:180px; }
+  .lot-info{ left:8%; top:20%; }
+  .lot-labs{ left:37%; top:16%; }
+  .lot-facility{ right:10%; top:23%; }
+  .lot-investor{ right:6%; top:52%; }
+  .lot-projects{ left:10%; bottom:18%; }
+  .lot-plaza{ left:27%; bottom:21%; }
+  .lot-help{ left:47%; bottom:13%; }
+  .lot-press{ right:14%; bottom:18%; }
+  .node-info{ left:7%; top:10%; }
+  .node-labs{ left:38%; top:6%; }
+  .node-facility{ right:8%; top:12%; }
+  .node-investor{ right:2%; top:43%; }
+  .node-projects{ left:5%; bottom:6%; }
+  .node-plaza{ left:25%; bottom:3%; }
+  .node-help{ left:44%; bottom:2%; }
+  .node-press{ right:10%; bottom:7%; }
+}
+@media (max-width: 700px){
+  .office-park-stage{ min-height: 1180px; }
+  .office-park-board{ position:relative; inset:auto; margin:12px; min-height:960px; }
+  .tour-note, .map-key { position:relative; left:auto; right:auto; top:auto; width:auto; margin:12px; }
+  .office-road{ box-shadow: inset 0 0 0 4px #aab0a7; }
+  .road-loop-top{ left:6%; right:6%; top:14%; }
+  .road-loop-bottom{ left:6%; right:6%; bottom:8%; }
+  .road-loop-left{ left:7%; top:17%; bottom:11%; }
+  .road-loop-right{ right:7%; top:17%; bottom:11%; }
+  .road-cross-horizontal{ left:15%; right:15%; top:52%; }
+  .road-cross-vertical{ top:22%; bottom:22%; }
+  .road-link-a, .road-link-b, .road-link-c{ display:none; }
+  .campus-lot{ width:140px; height:104px; }
+  .lot-info{ left:11%; top:20%; }
+  .lot-labs{ right:11%; left:auto; top:20%; }
+  .lot-facility{ right:11%; top:39%; }
+  .lot-investor{ right:11%; top:62%; }
+  .lot-projects{ left:11%; top:39%; bottom:auto; }
+  .lot-plaza{ left:11%; top:58%; bottom:auto; }
+  .lot-help{ left:11%; top:76%; bottom:auto; }
+  .lot-press{ right:11%; top:80%; bottom:auto; }
+  .campus-core{ width:104px; height:104px; top:54%; }
+  .town-node{ width:126px; padding:6px 6px; }
+  .node-info{ left:13%; top:12%; }
+  .node-labs{ right:13%; left:auto; top:12%; }
+  .node-facility{ right:13%; top:31%; }
+  .node-investor{ right:13%; top:54%; }
+  .node-projects{ left:13%; top:31%; bottom:auto; }
+  .node-plaza{ left:13%; top:50%; bottom:auto; }
+  .node-help{ left:13%; top:68%; bottom:auto; }
+  .node-press{ right:13%; top:72%; bottom:auto; }
+  .office-tree{ display:none; }
+  .car-c, .car-d{ display:none; }
+}
+
+
+/* v9 office park cleanup: map-only welcome area + abstract location icons */
+.office-park-stage {
+    min-height: 640px;
+    padding: 0;
+}
+.office-park-board {
+    inset: 14px;
+    min-height: 608px;
+    background:
+        radial-gradient(circle at 50% 52%, rgba(255, 245, 166, .36) 0 9%, transparent 10%),
+        linear-gradient(180deg, #dbe8cf 0 100%);
+}
+.office-park-board::after {
+    content: "SCHWWAAA OFFICE PARK / LOW BANDWIDTH MAP";
+    position: absolute;
+    left: 12px;
+    bottom: 10px;
+    z-index: 8;
+    padding: 4px 8px;
+    border: 1px solid rgba(0,0,0,.7);
+    background: rgba(255,255,255,.72);
+    font: 900 9px/1 var(--mono);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.62);
+}
+.town-status,
+.tour-note,
+.map-key,
+.map-footer { display: none !important; }
+
+/* Make each destination feel like a separate map location, not a generic UI badge. */
+.office-park-board .town-node {
+    width: 154px;
+    padding: 8px 8px 7px;
+    background: rgba(255, 253, 242, .96);
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 rgba(0,0,0,.35);
+    transition: transform .12s ease, background .12s ease;
+}
+.office-park-board .town-node:hover,
+.office-park-board .town-node:focus-visible {
+    transform: translate(-1px, -2px);
+    background: #fff2a3;
+}
+.office-park-board .town-node b { font-size: 11px; letter-spacing: -.02em; }
+.office-park-board .town-node em { font-size: 9px; }
+.office-park-board .map-tile {
+    width: 78px;
+    height: 62px;
+    margin-bottom: 5px;
+    background: linear-gradient(180deg, #f6f3ea, #ddd6c8);
+    border-color: #1b1b1b;
+    box-shadow: 5px 5px 0 #6f6a60;
+}
+.office-park-board .map-tile .ico {
+    width: 34px;
+    height: 34px;
+    transform: none;
+    border: 2px solid #000;
+    overflow: visible;
+}
+.office-park-board .ico::before,
+.office-park-board .ico::after {
+    box-sizing: border-box;
+}
+
+/* 1 Info Booth — municipal kiosk / beacon */
+.office-park-board .ico.booth {
+    background: linear-gradient(#f6d86a 0 34%, #fff9c7 34%);
+    border-radius: 2px;
+}
+.office-park-board .ico.booth::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    right: 9px;
+    top: 6px;
+    height: 7px;
+    background: #0d3688;
+    border: 2px solid #000;
+    box-shadow: 0 11px 0 #fff;
+}
+.office-park-board .ico.booth::after {
+    content: "i";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: -12px;
+    height: 16px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #000;
+    background: #fff;
+    font: 900 12px/1 Georgia, serif;
+}
+
+/* 2 Labs — synthetic cell / test reactor */
+.office-park-board .ico.lab {
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, #bffaff 0 12%, #4cc9ff 13% 30%, #143894 31% 62%, #050505 63% 100%);
+}
+.office-park-board .ico.lab::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: 14px;
+    height: 6px;
+    border: 2px solid #000;
+    border-left: none;
+    border-right: none;
+    transform: rotate(-18deg);
+    background: rgba(255,255,255,.75);
+}
+.office-park-board .ico.lab::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 2px dotted #9ff6ff;
+    border-radius: 50%;
+}
+
+/* 3 Facility Grid — service plant / stacked process blocks */
+.office-park-board .ico.factory {
+    background: #e7e1d4;
+    border-radius: 2px;
+}
+.office-park-board .ico.factory::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: 14px;
+    height: 13px;
+    background: #777;
+    box-shadow: 12px -5px 0 #adadad, 19px -16px 0 #c73734;
+}
+.office-park-board .ico.factory::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: -8px;
+    height: 7px;
+    background: repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 7px), #f6f0df;
+    border: 2px solid #000;
+}
+
+/* 4 Investor Hall — severe tower / market pillar */
+.office-park-board .ico.tower {
+    background: #e6f2e2;
+}
+.office-park-board .ico.tower::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: 4px;
+    width: 12px;
+    height: 23px;
+    background: repeating-linear-gradient(180deg, #b9d7c0 0 4px, #356247 4px 7px);
+    border: 2px solid #000;
+}
+.office-park-board .ico.tower::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: -8px;
+    width: 22px;
+    height: 8px;
+    background: #fff;
+    border: 2px solid #000;
+}
+
+/* 5 Project Block — registry cabinet / archive aperture */
+.office-park-board .ico.archive {
+    background: #efefef;
+}
+.office-park-board .ico.archive::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #6c6c6c;
+    background: linear-gradient(90deg, transparent 0 48%, #6c6c6c 48% 56%, transparent 56%);
+}
+.office-park-board .ico.archive::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background: #f5d94a;
+    border: 2px solid #000;
+    transform: rotate(45deg);
+}
+
+/* 6 Plaza — commons / weird public mascot */
+.office-park-board .ico.plaza {
+    border-radius: 50%;
+    background: #5fd857;
+}
+.office-park-board .ico.plaza::before,
+.office-park-board .ico.plaza::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #000;
+}
+.office-park-board .ico.plaza::before { left: 9px; }
+.office-park-board .ico.plaza::after { right: 9px; }
+.office-park-board .tile-plaza::after {
+    background: #8a824a;
+}
+
+/* 7 Press Room — bulletin scan / signal paper */
+.office-park-board .ico.press {
+    background: #fff;
+}
+.office-park-board .ico.press::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 2px dashed #4a4a4a;
+}
+.office-park-board .ico.press::after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 8px;
+    width: 8px;
+    height: 15px;
+    background: repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 5px);
+}
+
+/* 8 Help Desk — question terminal / human-ish support */
+.office-park-board .ico.help {
+    background: #fff4b7;
+    border-radius: 2px 2px 9px 2px;
+}
+.office-park-board .ico.help::before {
+    content: "?";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font: 900 22px/1 Georgia, serif;
+}
+.office-park-board .ico.help::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    bottom: 4px;
+    width: 8px;
+    height: 12px;
+    border: 2px solid #000;
+    border-left: none;
+    background: #fff;
+}
+
+/* Rebalance the map now that the sticky and directory are removed. */
+.node-info{ left: 9%; top: 10%; }
+.node-labs{ left: 42%; top: 7%; }
+.node-facility{ right: 11%; top: 11%; }
+.node-investor{ right: 4%; top: 42%; }
+.node-projects{ left: 9%; bottom: 7%; }
+.node-plaza{ left: 31%; bottom: 3%; }
+.node-press{ right: 20%; bottom: 7%; }
+.node-help{ left: 58%; bottom: 4%; }
+.lot-info{ left: 8%; top: 21%; }
+.lot-labs{ left: 40%; top: 18%; }
+.lot-facility{ right: 10%; top: 22%; }
+.lot-investor{ right: 8%; top: 53%; }
+.lot-projects{ left: 10%; bottom: 18%; }
+.lot-plaza{ left: 31%; bottom: 21%; }
+.lot-press{ right: 19%; bottom: 20%; }
+.lot-help{ left: 58%; bottom: 17%; }
+@media (max-width: 900px){
+  .office-park-stage{ min-height: 770px; }
+  .office-park-board{ inset: 12px; }
+  .office-park-board::after{ font-size: 8px; }
+  .node-info{ left: 6%; top: 9%; }
+  .node-labs{ left: 38%; top: 8%; }
+  .node-facility{ right: 7%; top: 12%; }
+  .node-investor{ right: 3%; top: 44%; }
+  .node-projects{ left: 6%; bottom: 7%; }
+  .node-plaza{ left: 27%; bottom: 4%; }
+  .node-help{ left: 44%; bottom: 3%; }
+  .node-press{ right: 9%; bottom: 8%; }
+}
+@media (max-width: 700px){
+  .office-park-stage{ min-height: 960px; }
+  .office-park-board{ min-height: 930px; }
+  .office-park-board::after{ left: 8px; right: 8px; bottom: 8px; text-align:center; }
+  .node-info{ left: 12%; top: 8%; }
+  .node-labs{ right: 12%; left: auto; top: 8%; }
+  .node-projects{ left: 12%; top: 29%; bottom:auto; }
+  .node-facility{ right: 12%; top: 29%; }
+  .node-plaza{ left: 12%; top: 50%; bottom:auto; }
+  .node-investor{ right: 12%; top: 50%; }
+  .node-help{ left: 12%; top: 71%; bottom:auto; }
+  .node-press{ right: 12%; top: 71%; bottom:auto; }
+}
+
+
+/* v10 office park RPG pass: visible citizen footer, standalone icons, raised 2.5D campus */
+.office-park-stage {
+    min-height: 700px;
+    background:
+        linear-gradient(180deg, #c9e1ee 0 12%, #d9e7c9 12% 62%, #c1d5b0 62% 100%);
+}
+.office-park-board {
+    inset: 14px 14px 54px;
+    min-height: 620px;
+    background:
+        radial-gradient(ellipse at 50% 52%, rgba(240, 222, 123, .38) 0 10%, transparent 11%),
+        repeating-linear-gradient(30deg, rgba(255,255,255,.12) 0 1px, transparent 1px 74px),
+        repeating-linear-gradient(120deg, rgba(70,100,70,.12) 0 1px, transparent 1px 74px),
+        linear-gradient(180deg, #dce9ce 0, #bdd7ad 100%);
+    border: 3px solid #252019;
+    box-shadow: inset 0 0 0 4px rgba(255,255,255,.28), inset 0 -22px 40px rgba(63,91,58,.14);
+}
+.office-park-board::after {
+    content: "SCHWWAAA OFFICE PARK / LOW BANDWIDTH MAP";
+    bottom: 12px;
+    background: rgba(255, 249, 219, .88);
+    box-shadow: 2px 2px 0 rgba(0,0,0,.22);
+}
+.map-footer {
+    display: flex !important;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 14px 18px;
+    border-top: 3px solid #4a4238;
+    background: #f2eadb;
+    font: 900 18px/1 var(--mono);
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+.map-footer span { margin-left: auto; }
+.map-footer a { color:#002a85; }
+.tour-note,
+.map-key,
+.town-status { display: none !important; }
+
+/* Make the map feel like a low-bandwidth RPG office park instead of a flat roadway diagram. */
+.office-road {
+    z-index: 1;
+    background: #747970;
+    border: 2px solid #51574f;
+    box-shadow: inset 0 0 0 5px #9ea69b, 2px 3px 0 rgba(0,0,0,.28);
+}
+.road-loop-top{ left:10%; right:10%; top:12%; height:42px; }
+.road-loop-bottom{ left:10%; right:10%; bottom:12%; height:42px; }
+.road-loop-left{ left:11%; top:15%; bottom:15%; width:42px; }
+.road-loop-right{ right:11%; top:15%; bottom:15%; width:42px; }
+.road-cross-horizontal{ left:20%; right:20%; top:52%; height:36px; transform: translateY(-50%); }
+.road-cross-vertical{ top:23%; bottom:23%; left:50%; width:36px; transform: translateX(-50%); }
+.road-link-a{ left:27%; top:29%; width:18%; height:28px; transform:rotate(-26deg); }
+.road-link-b{ right:24%; top:30%; width:17%; height:28px; transform:rotate(24deg); }
+.road-link-c{ left:34%; bottom:26%; width:30%; height:26px; }
+
+.campus-lot {
+    width: 166px;
+    height: 124px;
+    border: 2px solid #57524a;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.45), transparent 38%),
+        #e8e1d2;
+    box-shadow: 5px 7px 0 rgba(61,57,48,.35), inset 0 0 0 5px rgba(255,255,255,.25);
+    transform: skewY(-2deg);
+}
+.campus-lot::before {
+    inset: 10px;
+    border: 1px dashed rgba(0,0,0,.18);
+}
+.campus-lot::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: -8px;
+    bottom: -10px;
+    height: 10px;
+    background: #8b8170;
+    border: 2px solid #57524a;
+    border-top: none;
+    transform: skewX(-35deg);
+    z-index: -1;
+}
+.campus-lot .lot-building,
+.campus-lot .lot-annex {
+    background: #f7f4e8;
+    border: 2px solid #4d4d4d;
+    box-shadow: 4px 5px 0 rgba(0,0,0,.22);
+}
+.campus-lot .lot-building {
+    left: 18px;
+    top: 13px;
+    width: 78px;
+    height: 48px;
+}
+.campus-lot .lot-annex {
+    right: 15px;
+    bottom: 20px;
+    width: 52px;
+    height: 36px;
+}
+.campus-lot .lot-building::before,
+.campus-lot .lot-annex::before {
+    inset: 5px;
+    background:
+        linear-gradient(45deg, transparent 46%, rgba(0,0,0,.22) 46% 54%, transparent 54%),
+        repeating-linear-gradient(90deg, #cfd6dc 0 5px, #f4f7f7 5px 10px);
+}
+.campus-lot .lot-building::after,
+.campus-lot .lot-annex::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    right: -7px;
+    bottom: -8px;
+    height: 8px;
+    background: #8a877e;
+    border: 2px solid #4d4d4d;
+    border-top: none;
+    transform: skewX(-35deg);
+    z-index: -1;
+}
+.campus-lot .lot-parking {
+    left: 12px;
+    right: 12px;
+    bottom: 9px;
+    height: 18px;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.92) 0 2px, transparent 2px 16px), #858d83;
+}
+.lot-info{ left: 9%; top: 18%; }
+.lot-labs{ left: 39%; top: 13%; }
+.lot-facility{ right: 9%; top: 19%; }
+.lot-investor{ right: 7%; top: 52%; }
+.lot-projects{ left: 10%; bottom: 16%; }
+.lot-plaza{ left: 30%; bottom: 19%; }
+.lot-press{ right: 20%; bottom: 19%; }
+.lot-help{ left: 58%; bottom: 15%; }
+.campus-core {
+    top: 52%;
+    width: 118px;
+    height: 118px;
+    background: radial-gradient(circle at 42% 34%, #fff6a4, #dacb63 62%, #a49844 100%);
+    box-shadow: 5px 7px 0 rgba(0,0,0,.32);
+}
+.campus-core b { bottom: 9px; }
+
+/* Standalone location markers: no box around the icon. */
+.office-park-board .town-node {
+    width: 128px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    gap: 4px;
+    filter: drop-shadow(2px 3px 0 rgba(0,0,0,.32));
+}
+.office-park-board .town-node:hover,
+.office-park-board .town-node:focus-visible {
+    transform: translate(-1px, -2px);
+    background: transparent;
+}
+.office-park-board .town-node b {
+    display: inline-block;
+    padding: 4px 7px;
+    background: #fff8d6;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.28);
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+}
+.office-park-board .town-node em {
+    display: none;
+}
+.office-park-board .map-tile {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    transform: none;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.office-park-board .map-tile::before,
+.office-park-board .map-tile::after { display: none; }
+.office-park-board .map-tile .ico {
+    width: 54px;
+    height: 54px;
+    transform: none;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+}
+.office-park-board .ico::before,
+.office-park-board .ico::after { box-sizing: border-box; }
+
+/* Info Booth — weird municipal beacon kiosk */
+.office-park-board .ico.booth { border-radius: 0; }
+.office-park-board .ico.booth::before {
+    content: "";
+    position:absolute;
+    left: 14px;
+    top: 10px;
+    width: 26px;
+    height: 30px;
+    background: linear-gradient(#ffe26e 0 38%, #fff9c8 38%);
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #867f74;
+}
+.office-park-board .ico.booth::after {
+    content: "i";
+    position:absolute;
+    left: 21px;
+    top: -1px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display:grid;
+    place-items:center;
+    border: 3px solid #000;
+    background: #fff;
+    font: 900 13px/1 Georgia, serif;
+}
+
+/* Labs — suspended reactor / synthetic cell */
+.office-park-board .ico.lab::before {
+    content:"";
+    position:absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #caffff 0 13%, #59dcff 14% 34%, #173e96 35% 66%, #070707 67%);
+    border:3px solid #000;
+    box-shadow: 5px 5px 0 #62645f;
+}
+.office-park-board .ico.lab::after {
+    content:"";
+    position:absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    height: 6px;
+    border-top:3px solid #000;
+    border-bottom:3px solid #000;
+    transform: rotate(-18deg);
+    background: rgba(255,255,255,.78);
+}
+
+/* Facility Grid — stacked process blocks */
+.office-park-board .ico.factory::before {
+    content:"";
+    position:absolute;
+    left: 8px;
+    top: 14px;
+    width: 22px;
+    height: 22px;
+    background: #8f8f8f;
+    border:3px solid #000;
+    box-shadow: 16px -8px 0 #c73734, 28px 6px 0 #d7d1c4, 5px 5px 0 #756f67;
+}
+.office-park-board .ico.factory::after {
+    content:"";
+    position:absolute;
+    left: 6px;
+    bottom: 6px;
+    width: 44px;
+    height: 8px;
+    background: repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 8px), #fff3c6;
+    border: 3px solid #000;
+}
+
+/* Investor Hall — high-rise / market pillar */
+.office-park-board .ico.tower::before {
+    content:"";
+    position:absolute;
+    left: 19px;
+    bottom: 9px;
+    width: 18px;
+    height: 40px;
+    background: repeating-linear-gradient(180deg, #bddac0 0 5px, #356247 5px 8px);
+    border:3px solid #000;
+    box-shadow: 6px 6px 0 #6d7668;
+}
+.office-park-board .ico.tower::after {
+    content:"";
+    position:absolute;
+    left: 11px;
+    bottom: 4px;
+    width: 34px;
+    height: 10px;
+    background:#fff7c4;
+    border:3px solid #000;
+}
+
+/* Project Block — archive aperture / project registry */
+.office-park-board .ico.archive::before {
+    content:"";
+    position:absolute;
+    left: 9px;
+    top: 9px;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(90deg, #eee 0 46%, #6a6a6a 46% 54%, #eee 54%);
+    border:3px solid #606060;
+    box-shadow: 5px 5px 0 #79746a;
+}
+.office-park-board .ico.archive::after {
+    content:"";
+    position:absolute;
+    right: 1px;
+    top: 18px;
+    width: 14px;
+    height: 14px;
+    background:#f3d94a;
+    border:3px solid #000;
+    transform: rotate(45deg);
+}
+
+/* Plaza — public commons mascot */
+.office-park-board .ico.plaza::before {
+    content:"";
+    position:absolute;
+    inset: 7px;
+    border-radius: 50%;
+    background: #63d95d;
+    border:3px solid #000;
+    box-shadow: 5px 5px 0 #7a774d;
+}
+.office-park-board .ico.plaza::after {
+    content:"";
+    position:absolute;
+    left: 20px;
+    top: 25px;
+    width: 5px;
+    height: 5px;
+    border-radius:50%;
+    background:#000;
+    box-shadow: 14px 0 0 #000;
+}
+
+/* Press Room — bulletin scan / signal page */
+.office-park-board .ico.press::before {
+    content:"";
+    position:absolute;
+    left: 12px;
+    top: 8px;
+    width: 32px;
+    height: 40px;
+    background:#fff;
+    border:3px solid #000;
+    box-shadow: 5px 5px 0 #777;
+}
+.office-park-board .ico.press::after {
+    content:"";
+    position:absolute;
+    left: 17px;
+    top: 16px;
+    width: 22px;
+    height: 24px;
+    border:2px dashed #454545;
+    background: repeating-linear-gradient(180deg, #000 0 2px, transparent 2px 7px);
+}
+
+/* Help Desk — question terminal / support kiosk */
+.office-park-board .ico.help::before {
+    content:"?";
+    position:absolute;
+    left: 12px;
+    top: 11px;
+    width: 31px;
+    height: 31px;
+    display:grid;
+    place-items:center;
+    background:#fff5b5;
+    border:3px solid #000;
+    font: 900 26px/1 Georgia, serif;
+    box-shadow: 5px 5px 0 #817a66;
+}
+.office-park-board .ico.help::after {
+    content:"";
+    position:absolute;
+    right: 7px;
+    bottom: 6px;
+    width: 9px;
+    height: 16px;
+    background:#fff;
+    border:3px solid #000;
+}
+
+/* Less overlap: labels sit around the campus lots instead of on top of each other. */
+.node-info{ left: 11%; top: 7%; }
+.node-labs{ left: 43%; top: 4%; }
+.node-facility{ right: 12%; top: 7%; }
+.node-investor{ right: 5%; top: 42%; }
+.node-projects{ left: 12%; bottom: 7%; }
+.node-plaza{ left: 33%; bottom: 3%; }
+.node-press{ right: 21%; bottom: 7%; }
+.node-help{ left: 59%; bottom: 4%; }
+.office-tree{ z-index: 3; filter: drop-shadow(2px 3px 0 rgba(0,0,0,.25)); }
+.office-car{ z-index: 2; }
+@media (max-width: 900px){
+  .office-park-stage{ min-height: 800px; }
+  .office-park-board{ inset: 12px 12px 58px; min-height: 700px; }
+  .map-footer{ font-size: 14px; padding: 12px; }
+  .office-park-board .town-node{ width:118px; }
+  .office-park-board .town-node b{ font-size:9px; padding:4px 5px; }
+  .node-info{ left:7%; top:7%; }
+  .node-labs{ left:39%; top:5%; }
+  .node-facility{ right:7%; top:9%; }
+  .node-investor{ right:4%; top:44%; }
+  .node-projects{ left:7%; bottom:8%; }
+  .node-plaza{ left:28%; bottom:4%; }
+  .node-help{ left:46%; bottom:4%; }
+  .node-press{ right:9%; bottom:8%; }
+}
+@media (max-width: 700px){
+  .office-park-stage{ min-height: 1110px; }
+  .office-park-board{ position:relative; inset:auto; margin:12px; min-height:960px; }
+  .map-footer{ display:flex !important; font-size:12px; }
+  .map-footer span{ width:100%; margin-left:0; margin-top:8px; }
+  .office-park-board .town-node{ width:112px; }
+  .campus-lot{ width:132px; height:96px; }
+  .node-info{ left:12%; top:8%; }
+  .node-labs{ right:12%; left:auto; top:8%; }
+  .node-projects{ left:12%; top:30%; bottom:auto; }
+  .node-facility{ right:12%; top:30%; }
+  .node-plaza{ left:12%; top:51%; bottom:auto; }
+  .node-investor{ right:12%; top:51%; }
+  .node-help{ left:12%; top:72%; bottom:auto; }
+  .node-press{ right:12%; top:72%; bottom:auto; }
+}
+
+
+/* v11: image-based icons + cleaner 2.5D office park navigation */
+.service-icon-img,
+.project-icon-img {
+    display: block;
+    width: 86px;
+    height: 62px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+.project-directory .project-icon-img {
+    width: 44px;
+    height: 34px;
+    margin: 0;
+    flex: 0 0 auto;
+}
+.project-detail .project-icon-img {
+    width: 86px;
+    height: 62px;
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+/* remove the old floating icon boxes; only the icon image + label remains */
+.office-park-board .map-tile { display: none !important; }
+.office-park-board .map-marker {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 58px;
+    margin: 0 auto 3px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+}
+.office-park-board .map-icon-img {
+    display: block;
+    width: 64px;
+    height: 58px;
+    object-fit: contain;
+    filter: drop-shadow(3px 4px 0 rgba(0,0,0,.36));
+}
+.campus-core .map-icon-img {
+    width: 74px;
+    height: 56px;
+    filter: none;
+}
+
+/* map-only UI remains clean */
+.tour-note,
+.map-key,
+.town-status { display:none !important; }
+.map-footer { display:flex !important; }
+
+/* stronger 2.5D RPG office park: more like separated campus plots, less flat diagram */
+.office-park-stage {
+    min-height: 700px;
+    background:
+        linear-gradient(180deg, #c5dce9 0 11%, #dce8d1 11% 61%, #bfd4b2 61% 100%);
+}
+.office-park-board {
+    inset: 14px 14px 54px;
+    min-height: 620px;
+    background:
+        radial-gradient(ellipse at 50% 53%, rgba(238, 220, 111, .38) 0 10%, transparent 11%),
+        repeating-linear-gradient(30deg, rgba(255,255,255,.14) 0 1px, transparent 1px 84px),
+        repeating-linear-gradient(120deg, rgba(66,94,64,.11) 0 1px, transparent 1px 84px),
+        linear-gradient(180deg, #dce8d1 0, #bed5af 100%);
+    border: 3px solid #252019;
+    box-shadow: inset 0 0 0 4px rgba(255,255,255,.28), inset 0 -24px 44px rgba(63,91,58,.14);
+}
+.office-park-board::after {
+    content: "SCHWWAAA OFFICE PARK / LOW BANDWIDTH MAP";
+    left: 12px;
+    bottom: 12px;
+    background: rgba(255, 249, 219, .9);
+    box-shadow: 2px 2px 0 rgba(0,0,0,.22);
+}
+
+/* clean road plan: connected loop + cross streets, no stray diagonal roads */
+.road-link-a,
+.road-link-b,
+.road-link-c { display:none !important; }
+.office-road {
+    z-index: 1;
+    background: #73796f;
+    border: 2px solid #4f574e;
+    box-shadow: inset 0 0 0 5px #9fa89d, 2px 3px 0 rgba(0,0,0,.25);
+}
+.road-loop-top { left: 10%; right: 10%; top: 14%; height: 36px; }
+.road-loop-bottom { left: 10%; right: 10%; bottom: 13%; height: 36px; }
+.road-loop-left { left: 12%; top: 14%; bottom: 13%; width: 36px; }
+.road-loop-right { right: 12%; top: 14%; bottom: 13%; width: 36px; }
+.road-cross-horizontal { left: 20%; right: 20%; top: 50%; height: 34px; transform: translateY(-50%); }
+.road-cross-vertical { top: 23%; bottom: 23%; left: 50%; width: 34px; transform: translateX(-50%); }
+
+/* campus plots are separate office-park locations with top-down roofs and raised shadows */
+.campus-lot {
+    width: 150px;
+    height: 106px;
+    border: 2px solid #57524a;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.52), transparent 40%),
+        #e9e1d2;
+    box-shadow: 5px 7px 0 rgba(61,57,48,.36), inset 0 0 0 5px rgba(255,255,255,.24);
+    transform: skewY(-2deg);
+}
+.campus-lot::before { inset: 9px; border: 1px dashed rgba(0,0,0,.18); }
+.campus-lot::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: -8px;
+    bottom: -10px;
+    height: 10px;
+    background: #8b8170;
+    border: 2px solid #57524a;
+    border-top: none;
+    transform: skewX(-35deg);
+    z-index: -1;
+}
+.campus-lot .lot-building,
+.campus-lot .lot-annex {
+    background: #f7f4e8;
+    border: 2px solid #4d4d4d;
+    box-shadow: 4px 5px 0 rgba(0,0,0,.22);
+}
+.campus-lot .lot-building { left: 16px; top: 13px; width: 68px; height: 42px; }
+.campus-lot .lot-annex { right: 13px; bottom: 18px; width: 48px; height: 32px; }
+.campus-lot .lot-building::before,
+.campus-lot .lot-annex::before {
+    inset: 5px;
+    background:
+        linear-gradient(45deg, transparent 46%, rgba(0,0,0,.20) 46% 54%, transparent 54%),
+        repeating-linear-gradient(90deg, #cfd6dc 0 5px, #f4f7f7 5px 10px);
+}
+.campus-lot .lot-building::after,
+.campus-lot .lot-annex::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    right: -7px;
+    bottom: -8px;
+    height: 8px;
+    background: #8a877e;
+    border: 2px solid #4d4d4d;
+    border-top: none;
+    transform: skewX(-35deg);
+    z-index: -1;
+}
+.campus-lot .lot-parking {
+    left: 12px;
+    right: 12px;
+    bottom: 8px;
+    height: 15px;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.92) 0 2px, transparent 2px 15px), #858d83;
+}
+.lot-info { left: 9%; top: 19%; }
+.lot-labs { left: 41%; top: 13%; }
+.lot-facility { right: 9%; top: 19%; }
+.lot-investor { right: 7%; top: 52%; }
+.lot-projects { left: 10%; bottom: 16%; width: 132px; height: 92px; }
+.lot-plaza { left: 31%; bottom: 19%; }
+.lot-press { right: 20%; bottom: 19%; }
+.lot-help { left: 59%; bottom: 15%; }
+
+.campus-core {
+    top: 52%;
+    width: 118px;
+    height: 118px;
+    background: radial-gradient(circle at 42% 34%, #fff6a4, #dacb63 62%, #a49844 100%);
+    box-shadow: 5px 7px 0 rgba(0,0,0,.32);
+}
+.campus-core b { bottom: 9px; }
+
+/* destination labels: smaller, offset, and no icon box overlap */
+.office-park-board .town-node {
+    width: 116px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    gap: 2px;
+    filter: drop-shadow(2px 3px 0 rgba(0,0,0,.26));
+}
+.office-park-board .town-node:hover,
+.office-park-board .town-node:focus-visible {
+    transform: translate(-1px, -2px);
+    background: transparent;
+}
+.office-park-board .town-node b {
+    display: inline-block;
+    padding: 4px 6px;
+    background: #fff8d6;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.26);
+    font-size: 9px;
+    line-height: 1;
+    white-space: nowrap;
+}
+.office-park-board .town-node em { display:none; }
+.node-projects .map-marker,
+.node-projects .map-icon-img { width: 50px; height: 46px; }
+
+.node-info { left: 12%; top: 7%; }
+.node-labs { left: 44%; top: 4%; }
+.node-facility { right: 13%; top: 7%; }
+.node-investor { right: 5%; top: 43%; }
+.node-projects { left: 12%; bottom: 9%; }
+.node-plaza { left: 34%; bottom: 3%; }
+.node-press { right: 22%; bottom: 8%; }
+.node-help { left: 60%; bottom: 4%; }
+.office-tree { z-index: 3; filter: drop-shadow(2px 3px 0 rgba(0,0,0,.25)); }
+.office-car { z-index: 2; }
+@media (max-width: 900px) {
+    .office-park-stage { min-height: 800px; }
+    .office-park-board { inset: 12px 12px 58px; min-height: 700px; }
+    .office-park-board .town-node { width: 108px; }
+    .office-park-board .town-node b { font-size: 8px; padding: 4px 5px; }
+    .office-park-board .map-marker, .office-park-board .map-icon-img { width: 56px; height: 52px; }
+    .node-projects .map-marker, .node-projects .map-icon-img { width: 46px; height: 42px; }
+    .node-info { left: 7%; top: 7%; }
+    .node-labs { left: 39%; top: 5%; }
+    .node-facility { right: 7%; top: 9%; }
+    .node-investor { right: 4%; top: 44%; }
+    .node-projects { left: 7%; bottom: 10%; }
+    .node-plaza { left: 28%; bottom: 4%; }
+    .node-help { left: 46%; bottom: 4%; }
+    .node-press { right: 9%; bottom: 8%; }
+}
+@media (max-width: 700px) {
+    .office-park-stage { min-height: 1110px; }
+    .office-park-board { position: relative; inset: auto; margin: 12px; min-height: 960px; }
+    .campus-lot { width: 128px; height: 94px; }
+    .office-park-board .town-node { width: 106px; }
+    .node-info { left: 12%; top: 8%; }
+    .node-labs { right: 12%; left: auto; top: 8%; }
+    .node-projects { left: 12%; top: 30%; bottom: auto; }
+    .node-facility { right: 12%; top: 30%; }
+    .node-plaza { left: 12%; top: 51%; bottom: auto; }
+    .node-investor { right: 12%; top: 51%; }
+    .node-help { left: 12%; top: 72%; bottom: auto; }
+    .node-press { right: 12%; top: 72%; bottom: auto; }
+}
+
+
+/* v12: reference-driven 2.5D isometric office park map
+   Uses one connected SVG map layer for roads/buildings, with clickable icon markers above it. */
+.office-park-stage {
+    min-height: 720px;
+    background: linear-gradient(180deg, #c6dbe8 0 10%, #d9e6cf 10% 100%);
+}
+.office-park-board {
+    inset: 14px 14px 54px;
+    min-height: 645px;
+    background: #c9dcbc;
+    border: 3px solid #252019;
+    box-shadow: inset 0 0 0 4px rgba(255,255,255,.24), inset 0 -28px 42px rgba(76,96,64,.12);
+    overflow: hidden;
+}
+.office-ground,
+.office-road,
+.campus-lot,
+.office-tree,
+.office-car,
+.iso-street,
+.iso-ground,
+.iso-canal,
+.iso-tree,
+.pixel-person { display: none !important; }
+.office-map-art {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.office-park-board::before { display:none !important; }
+.office-park-board::after {
+    z-index: 8;
+    content: "SCHWWAAA OFFICE PARK / LOW BANDWIDTH MAP";
+    left: 12px;
+    bottom: 12px;
+    background: rgba(255, 249, 219, .92);
+    border: 1px solid #756f60;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.22);
+}
+.office-park-board .town-node {
+    z-index: 9;
+    width: 116px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    filter: drop-shadow(2px 3px 0 rgba(0,0,0,.26));
+}
+.office-park-board .town-node:hover,
+.office-park-board .town-node:focus-visible {
+    background: transparent;
+    transform: translate(-1px, -2px);
+}
+.office-park-board .map-marker {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 54px;
+    margin: 0 auto 2px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.office-park-board .map-icon-img {
+    width: 58px;
+    height: 54px;
+    object-fit: contain;
+    filter: drop-shadow(3px 4px 0 rgba(0,0,0,.38));
+}
+.office-park-board .town-node b {
+    display: inline-block;
+    padding: 4px 6px;
+    background: #fff8d6;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.28);
+    font-size: 9px;
+    line-height: 1;
+    white-space: nowrap;
+}
+.office-park-board .town-node em { display:none; }
+.node-projects .map-marker,
+.node-projects .map-icon-img { width: 42px; height: 38px; }
+.campus-core {
+    z-index: 9;
+    top: 52%;
+    left: 50%;
+    width: 112px;
+    height: 112px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.campus-core .map-icon-img {
+    width: 78px;
+    height: 58px;
+    filter: drop-shadow(3px 4px 0 rgba(0,0,0,.25));
+}
+.campus-core b {
+    bottom: 0;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.25);
+}
+.node-info { left: 13%; top: 14%; }
+.node-labs { left: 44%; top: 5%; }
+.node-facility { right: 13%; top: 15%; }
+.node-investor { right: 5%; top: 44%; }
+.node-projects { left: 12%; bottom: 11%; }
+.node-plaza { left: 34%; bottom: 5%; }
+.node-press { right: 22%; bottom: 10%; }
+.node-help { left: 58%; bottom: 5%; }
+.map-footer { display:flex !important; }
+@media (max-width: 900px) {
+    .office-park-stage { min-height: 790px; }
+    .office-park-board { inset: 12px 12px 58px; min-height: 700px; }
+    .office-park-board .town-node { width: 108px; }
+    .office-park-board .town-node b { font-size: 8px; padding: 4px 5px; }
+    .office-park-board .map-marker,
+    .office-park-board .map-icon-img { width: 52px; height: 48px; }
+    .node-projects .map-marker,
+    .node-projects .map-icon-img { width: 38px; height: 34px; }
+    .node-info { left: 7%; top: 10%; }
+    .node-labs { left: 39%; top: 6%; }
+    .node-facility { right: 7%; top: 11%; }
+    .node-investor { right: 4%; top: 44%; }
+    .node-projects { left: 6%; bottom: 13%; }
+    .node-plaza { left: 28%; bottom: 5%; }
+    .node-help { left: 45%; bottom: 5%; }
+    .node-press { right: 9%; bottom: 11%; }
+}
+@media (max-width: 700px) {
+    .office-park-stage { min-height: 1060px; }
+    .office-park-board { position: relative; inset: auto; margin: 12px; min-height: 900px; }
+    .office-map-art { width: 160%; height: 100%; left: -30%; }
+    .office-park-board .town-node { width: 104px; }
+    .node-info { left: 12%; top: 10%; }
+    .node-labs { right: 12%; left: auto; top: 10%; }
+    .node-projects { left: 12%; top: 31%; bottom: auto; }
+    .node-facility { right: 12%; top: 31%; }
+    .node-plaza { left: 12%; top: 52%; bottom: auto; }
+    .node-investor { right: 12%; top: 52%; }
+    .node-help { left: 12%; top: 73%; bottom: auto; }
+    .node-press { right: 12%; top: 73%; bottom: auto; }
+    .campus-core { width: 94px; height: 94px; }
+}
+
+
+/* ===== v13: cleaned isometric office-park map ===== */
+.office-park-stage {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 18px 18px 10px;
+  background: linear-gradient(180deg,#d8e5ef 0 110px,#cfdbc2 110px 100%);
+}
+.office-park-board {
+  position: relative;
+  width: min(100%, 1460px);
+  min-width: 980px;
+  aspect-ratio: 1200 / 760;
+  margin: 0 auto;
+  border: 3px solid #554f46;
+  background: #cdddba;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 2px #d8d0c3;
+}
+.office-map-art, .clean-isometric-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.office-ground, .office-road, .campus-lot, .plaza-core, .office-tree, .office-car { display:none !important; }
+.office-park-board .town-node {
+  position: absolute;
+  z-index: 5;
+  width: 118px;
+  text-decoration: none;
+  color: #111;
+  text-align: center;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.office-park-board .town-node:hover,
+.office-park-board .town-node:focus-visible { transform: translateY(-2px); }
+.office-park-board .map-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 56px;
+  margin: 0 auto 6px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.office-park-board .map-icon-img {
+  width: 60px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(1px 2px 0 rgba(255,255,255,.65)) drop-shadow(2px 3px 0 rgba(63,53,34,.28));
+}
+.office-park-board .town-node b {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.12;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  background: rgba(245,240,220,.95);
+  border: 2px solid #403a32;
+  box-shadow: 2px 2px 0 #8e8778;
+  padding: 5px 8px;
+}
+.office-park-board .town-node em { display:none; }
+.node-info { left: 10.2%; top: 11.8%; }
+.node-labs { left: 45.2%; top: 5.5%; }
+.node-facility { left: 80.8%; top: 11.4%; }
+.node-investor { left: 86.4%; top: 47.4%; }
+.node-projects { left: 8.8%; top: 58.8%; width: 108px; }
+.node-projects .map-marker,
+.node-projects .map-icon-img { width: 46px; height: 42px; }
+.node-plaza { left: 48.6%; top: 38.2%; width: 126px; }
+.node-press { left: 63.2%; top: 74%; }
+.node-help { left: 52.4%; top: 76.8%; }
+.map-footer {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(16px,1.5vw,22px);
+}
+@media (max-width: 900px) {
+  .office-park-stage {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 12px 10px;
+  }
+  .office-park-board { min-width: 920px; }
+  .map-footer { font-size: 14px; padding: 12px 16px; }
+}
+
+
+/* === v14 generated office park integration === */
+.office-park-stage {
+  min-height: 880px;
+}
+
+.office-park-board {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #dbe3cf 0%, #c8d5b4 100%);
+}
+
+.office-map-art.generated-office-park-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  image-rendering: auto;
+}
+
+.office-park-board::after {
+  content: "SCHWWAAA OFFICE PARK / LOW BANDWIDTH MAP";
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  z-index: 7;
+  background: rgba(239, 234, 216, 0.92);
+  border: 2px solid #585247;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
+  padding: 5px 10px;
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.office-park-board .town-node {
+  position: absolute;
+  z-index: 8;
+  width: auto;
+  min-width: 98px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.office-park-board .town-node:hover,
+.office-park-board .town-node:focus-visible {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.office-park-board .map-marker {
+  width: 62px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(2px 3px 0 rgba(0,0,0,.35));
+}
+
+.office-park-board .map-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.office-park-board .town-node b {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 8px 3px;
+  background: rgba(242, 234, 205, 0.95);
+  border: 2px solid #585247;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.28);
+  color: #111;
+  font-size: 11px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.office-park-board .town-node em {
+  display: none;
+}
+
+.node-projects .map-marker,
+.node-projects .map-icon-img {
+  width: 54px;
+  height: 50px;
+}
+
+/* placement for generated map */
+.node-info { left: 46%; top: 19%; }
+.node-labs { left: 63%; top: 9.5%; }
+.node-facility { left: 30%; top: 6%; }
+.node-investor { left: 67%; top: 67%; }
+.node-projects { left: 46%; top: 72%; }
+.node-plaza { left: 46%; top: 46%; }
+.node-press { left: 62%; top: 48%; }
+.node-help { left: 21%; top: 47%; }
+
+@media (max-width: 1100px) {
+  .office-park-stage { min-height: 760px; }
+  .office-park-board .map-marker { width: 56px; height: 52px; }
+  .node-projects .map-marker,
+  .node-projects .map-icon-img { width: 50px; height: 46px; }
+  .office-park-board .town-node b { font-size: 10px; }
+}
+
+@media (max-width: 820px) {
+  .office-park-stage {
+    min-height: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .office-park-board {
+    min-width: 940px;
+    min-height: 540px;
+    aspect-ratio: 1672 / 941;
+  }
+  .map-footer {
+    font-size: 12px;
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 580px) {
+  .office-park-board { min-width: 900px; }
+  .office-park-board .map-marker { width: 52px; height: 48px; }
+  .office-park-board .town-node b { font-size: 9px; padding: 3px 6px; }
+  .map-footer { font-size: 11px; }
+}
+
+
+/* === v15 focused pass: pin placement alignment on generated office park === */
+.office-park-board .town-node {
+  transform: translate(-50%, -50%);
+  min-width: 104px;
+}
+
+.office-park-board .town-node b {
+  white-space: nowrap;
+}
+
+.office-park-board .map-marker {
+  width: 58px;
+  height: 54px;
+}
+
+.node-projects .map-marker,
+.node-projects .map-icon-img {
+  width: 46px;
+  height: 42px;
+}
+
+/* Mapped to actual campus buildings / locations in the generated background */
+.node-info     { left: 50.5%; top: 37.8%; }
+.node-labs     { left: 66.2%; top: 17.0%; }
+.node-facility { left: 87.6%; top: 38.8%; }
+.node-investor { left: 38.0%; top: 18.4%; }
+.node-projects { left: 30.4%; top: 59.8%; }
+.node-plaza    { left: 51.2%; top: 57.4%; }
+.node-press    { left: 74.6%; top: 82.0%; }
+.node-help     { left: 15.2%; top: 40.8%; }
+
+@media (max-width: 1100px) {
+  .office-park-board .map-marker {
+    width: 54px;
+    height: 50px;
+  }
+  .node-projects .map-marker,
+  .node-projects .map-icon-img {
+    width: 43px;
+    height: 39px;
+  }
+}
+
+@media (max-width: 820px) {
+  .office-park-board .town-node {
+    min-width: 96px;
+  }
+  .office-park-board .town-node b {
+    font-size: 10px;
+  }
+}
+
+
+/* === v16 responsive campus navigation ===
+   Desktop keeps the SimCity/isometric image map with overlay pins.
+   Mobile becomes a game-like district selector instead of forcing the full pin map into a phone viewport. */
+.campus-map-mobile {
+  display: none;
+}
+
+.campus-map-desktop {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1672 / 941;
+  min-height: 0;
+}
+
+.campus-map-desktop .generated-office-park-map {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 760px) {
+  .office-park-stage {
+    min-height: 0 !important;
+    padding: 10px;
+    overflow: visible;
+  }
+
+  .campus-map-desktop {
+    display: none !important;
+  }
+
+  .campus-map-mobile {
+    display: block;
+  }
+
+  .mobile-map-preview {
+    position: relative;
+    border: 3px solid #4f493f;
+    background: #d8dec6;
+    box-shadow: 3px 3px 0 rgba(0,0,0,.25);
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .mobile-map-preview img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 50% 52%;
+    display: block;
+  }
+
+  .mobile-map-preview span {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    background: rgba(242, 234, 205, .94);
+    border: 2px solid #4f493f;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.25);
+    padding: 4px 8px;
+    font: 700 10px/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .district-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .district-card {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 10px;
+    align-items: center;
+    min-height: 64px;
+    padding: 9px 10px;
+    background: #f4efe3;
+    border: 2px solid #4f493f;
+    box-shadow: 3px 3px 0 rgba(0,0,0,.22);
+    color: #15130f;
+    text-decoration: none;
+  }
+
+  .district-card:hover,
+  .district-card:focus-visible {
+    background: #fff7ca;
+    transform: translate(-1px, -1px);
+  }
+
+  .district-card img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    filter: drop-shadow(1px 2px 0 rgba(0,0,0,.2));
+  }
+
+  .district-card b {
+    display: block;
+    font: 900 15px/1.05 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .02em;
+  }
+
+  .district-card em {
+    display: block;
+    margin-top: 3px;
+    font: 13px/1.2 var(--sans);
+    color: #4c453b;
+  }
+
+  .map-footer {
+    display: flex !important;
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .map-footer span {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+}
+
+@media (min-width: 761px) {
+  .campus-map-desktop {
+    display: block;
+  }
+}
+
+
+/* === v17 map hover stability + Central Commons hidden ===
+   Keep desktop map pins visually static on hover/focus. Earlier rules used hover transforms,
+   which caused jitter against the absolute-positioned image map. */
+.office-park-board .town-node,
+.office-park-board .town-node:hover,
+.office-park-board .town-node:focus-visible,
+.campus-map-desktop .town-node,
+.campus-map-desktop .town-node:hover,
+.campus-map-desktop .town-node:focus-visible {
+  transform: translate(-50%, -50%) !important;
+  transition: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.office-park-board .town-node:hover .map-marker,
+.office-park-board .town-node:focus-visible .map-marker,
+.office-park-board .town-node:hover .map-icon-img,
+.office-park-board .town-node:focus-visible .map-icon-img {
+  transform: none !important;
+  transition: none !important;
+}
+
+.node-plaza {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .district-card:hover,
+  .district-card:focus-visible {
+    transform: none !important;
+  }
+}
+
+
+/* === v18 padding correction for welcome map ===
+   Removes the desktop min-height gap that created the huge uneven blank area
+   under the generated campus map. The map stage now sizes to the image ratio. */
+@media (min-width: 761px) {
+  .hero-map {
+    overflow: hidden;
+  }
+
+  .office-park-stage {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: clamp(18px, 2.55vw, 38px) !important;
+    padding-bottom: clamp(18px, 2.55vw, 38px) !important;
+    overflow: visible !important;
+    display: block !important;
+    background: linear-gradient(180deg, #dfeaf2 0 12%, #cbd8bd 12% 100%) !important;
+  }
+
+  .office-park-board.campus-map-desktop,
+  .campus-map-desktop {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: 1672 / 941 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .office-map-art.generated-office-park-map,
+  .campus-map-desktop .generated-office-park-map {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .map-footer {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .office-park-stage {
+    padding: 10px !important;
+  }
+}
+
+
+/* === v19 low-resolution countryside mode ===
+   High resolution = the full retro corporate portal.
+   Low resolution = the portal fizzles away, the top bar stays, and the campus
+   remains as a simulation rectangle floating inside endless countryside. */
+.lowland-world,
+.lowland-fizzle {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.lowland-world {
+  z-index: -2;
+  background:
+    radial-gradient(circle at 18% 78%, rgba(255,246,198,.22) 0 8%, transparent 22%),
+    linear-gradient(180deg, rgba(220,235,236,.18), rgba(188,212,158,.30)),
+    url("assets/lowland-countryside.png") center center / cover no-repeat;
+  transition: opacity 720ms ease;
+}
+
+.lowland-fizzle {
+  z-index: 12;
+  mix-blend-mode: screen;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.0) 0 2px, rgba(255,255,255,.15) 3px 4px),
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.45), transparent 6%),
+    radial-gradient(circle at 67% 42%, rgba(255,255,255,.30), transparent 5%),
+    radial-gradient(circle at 84% 73%, rgba(255,255,255,.28), transparent 4%);
+}
+
+body.low-resolution {
+  min-height: 100vh;
+  background: #bed5a3;
+  overflow-x: hidden;
+}
+
+body.low-resolution .lowland-world {
+  opacity: 1;
+}
+
+body.low-resolution.low-resolution-entering .lowland-fizzle {
+  animation: lowlandStaticBurst 880ms steps(9, end) both;
+}
+
+body.low-resolution .system-strip {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 3px solid #1f1c18;
+}
+
+.resolution-label b {
+  color: #f2d746;
+}
+
+body.low-resolution .resolution-label b {
+  color: #7cff63;
+}
+
+body.low-resolution .tiny-mode {
+  background: #f2d746;
+  color: #000;
+  border-color: #fff6c6;
+  box-shadow: 2px 2px 0 #5e551f;
+}
+
+body.low-resolution .site-header,
+body.low-resolution .left-rail,
+body.low-resolution .main-content,
+body.low-resolution .right-rail,
+body.low-resolution .site-footer,
+body.low-resolution .wide-footer-widgets {
+  animation: fizzleAway 860ms steps(8, end) both;
+  pointer-events: none;
+}
+
+body.low-resolution.low-resolution-settled .site-header,
+body.low-resolution.low-resolution-settled .left-rail,
+body.low-resolution.low-resolution-settled .main-content,
+body.low-resolution.low-resolution-settled .right-rail,
+body.low-resolution.low-resolution-settled .site-footer,
+body.low-resolution.low-resolution-settled .wide-footer-widgets {
+  display: none !important;
+}
+
+body.low-resolution .page-grid {
+  position: relative;
+  z-index: 5;
+  display: block !important;
+  width: min(1180px, calc(100% - 32px));
+  margin: clamp(22px, 4.5vw, 70px) auto clamp(28px, 5vw, 80px);
+}
+
+body.low-resolution .hero-map {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  box-shadow: 9px 9px 0 rgba(0,0,0,.32);
+}
+
+body.low-resolution .hero-map .panel-title {
+  border-bottom-color: #111;
+}
+
+body.low-resolution .office-park-stage {
+  background: rgba(203, 216, 189, .28) !important;
+  padding: clamp(10px, 2vw, 24px) !important;
+}
+
+body.low-resolution .campus-map-desktop {
+  border-width: 3px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,.35);
+}
+
+body.low-resolution .campus-map-mobile {
+  display: none !important;
+}
+
+body.low-resolution .campus-map-desktop,
+body.low-resolution .office-park-board.campus-map-desktop {
+  display: block !important;
+}
+
+body.low-resolution .map-footer {
+  display: flex !important;
+  background: #f1e6d6;
+}
+
+@keyframes fizzleAway {
+  0% {
+    opacity: 1;
+    filter: none;
+    transform: translate(0,0);
+    clip-path: inset(0 0 0 0);
+  }
+  25% {
+    opacity: .72;
+    filter: contrast(185%) saturate(.35) brightness(1.25);
+    transform: translate(1px,-1px);
+    clip-path: inset(4% 0 2% 0);
+  }
+  54% {
+    opacity: .44;
+    filter: grayscale(1) contrast(250%) brightness(1.45);
+    transform: translate(-2px,1px);
+    clip-path: inset(16% 0 10% 0);
+  }
+  78% {
+    opacity: .18;
+    filter: blur(1px) contrast(260%) brightness(1.6);
+    transform: translate(2px,3px);
+    clip-path: inset(30% 0 28% 0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(2px) saturate(0) brightness(1.8);
+    transform: translateY(8px);
+    clip-path: inset(50% 0 50% 0);
+  }
+}
+
+@keyframes lowlandStaticBurst {
+  0% { opacity: 0; transform: translateX(0); }
+  12% { opacity: .60; transform: translateX(-3px); }
+  28% { opacity: .28; transform: translateX(2px); }
+  45% { opacity: .48; transform: translateX(-1px); }
+  70% { opacity: .14; transform: translateX(4px); }
+  100% { opacity: 0; transform: translateX(0); }
+}
+
+@media (max-width: 760px) {
+  body.low-resolution .page-grid {
+    width: min(100% - 18px, 720px);
+    margin-top: 12px;
+  }
+
+  body.low-resolution .office-park-stage {
+    padding: 8px !important;
+    overflow: visible !important;
+  }
+
+  body.low-resolution .campus-map-desktop,
+  body.low-resolution .office-park-board.campus-map-desktop {
+    width: 100% !important;
+    min-width: 0 !important;
+    aspect-ratio: 1672 / 941 !important;
+  }
+
+  body.low-resolution .office-park-board .map-marker {
+    width: 36px;
+    height: 34px;
+  }
+
+  body.low-resolution .office-park-board .town-node b {
+    display: none;
+  }
+
+  body.low-resolution .office-park-board::after {
+    font-size: 8px;
+    left: 8px;
+    bottom: 8px;
+    padding: 3px 6px;
+  }
+
+  body.low-resolution .map-footer {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.low-resolution .site-header,
+  body.low-resolution .left-rail,
+  body.low-resolution .main-content,
+  body.low-resolution .right-rail,
+  body.low-resolution .site-footer,
+  body.low-resolution .wide-footer-widgets,
+  body.low-resolution.low-resolution-entering .lowland-fizzle {
+    animation: none !important;
+  }
+}
+
+
+/* === v20: low-resolution countryside mode refinement ===
+   Entire website fizzles away except the top system strip and campus simulation.
+   In low resolution, the campus switches to a grassified map variant and sits on a
+   cleaned endless countryside backdrop so the two images feel connected. */
+.lowland-world {
+  background:
+    linear-gradient(180deg, rgba(210,231,233,.08), rgba(162,190,119,.20)),
+    url("assets/lowland-countryside-clean.png") center center / cover no-repeat !important;
+}
+
+.generated-office-park-map {
+  transition: opacity 680ms steps(8, end), filter 680ms steps(8, end);
+}
+
+.generated-office-park-map--low {
+  opacity: 0;
+  filter: saturate(1.06) contrast(1.02);
+}
+
+body.low-resolution .generated-office-park-map--high {
+  opacity: 0;
+  filter: saturate(.55) contrast(1.35) brightness(1.1);
+}
+
+body.low-resolution .generated-office-park-map--low {
+  opacity: 1;
+}
+
+/* Everything outside the persistent top strip + campus simulation disappears. */
+body.low-resolution .site-header,
+body.low-resolution .left-rail,
+body.low-resolution .main-content,
+body.low-resolution .right-rail,
+body.low-resolution .site-footer,
+body.low-resolution .wide-footer-widgets,
+body.low-resolution .hero-map > .panel-title,
+body.low-resolution .hero-map > .map-footer,
+body.low-resolution .campus-map-mobile {
+  animation: fizzleAway 860ms steps(8, end) both;
+  pointer-events: none;
+}
+
+body.low-resolution.low-resolution-settled .site-header,
+body.low-resolution.low-resolution-settled .left-rail,
+body.low-resolution.low-resolution-settled .main-content,
+body.low-resolution.low-resolution-settled .right-rail,
+body.low-resolution.low-resolution-settled .site-footer,
+body.low-resolution.low-resolution-settled .wide-footer-widgets,
+body.low-resolution.low-resolution-settled .hero-map > .panel-title,
+body.low-resolution.low-resolution-settled .hero-map > .map-footer,
+body.low-resolution.low-resolution-settled .campus-map-mobile {
+  display: none !important;
+}
+
+body.low-resolution .hero-map {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+body.low-resolution .office-park-stage {
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  overflow: visible !important;
+}
+
+body.low-resolution .campus-map-desktop,
+body.low-resolution .office-park-board.campus-map-desktop {
+  border: 2px solid rgba(47, 80, 35, .62) !important;
+  box-shadow:
+    0 0 0 1px rgba(231, 242, 201, .50),
+    0 0 54px rgba(84, 127, 53, .55),
+    0 18px 70px rgba(20, 54, 18, .32) !important;
+  background: transparent !important;
+}
+
+body.low-resolution .office-park-board.campus-map-desktop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 32px 20px rgba(143, 174, 92, .20),
+    inset 0 0 10px 2px rgba(248, 244, 209, .24);
+}
+
+body.low-resolution .office-park-board.campus-map-desktop::after {
+  display: none !important;
+}
+
+body.low-resolution .town-node {
+  z-index: 9;
+}
+
+body.low-resolution .office-park-board .town-node b {
+  background: rgba(235, 229, 190, .86);
+  border-color: rgba(45, 55, 30, .70);
+  box-shadow: 2px 2px 0 rgba(35, 55, 22, .32);
+}
+
+@media (max-width: 760px) {
+  body.low-resolution .hero-map {
+    width: 100%;
+  }
+
+  body.low-resolution .page-grid {
+    width: min(100% - 18px, 760px);
+    margin-top: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.low-resolution .hero-map > .panel-title,
+  body.low-resolution .hero-map > .map-footer,
+  body.low-resolution .campus-map-mobile {
+    animation: none !important;
+  }
+}
+
+
+/* === v21: real bandwidth controls + full-site fizzle + seamless lowland === */
+.system-strip {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 14px;
+  background: #050505;
+  color: #f8f5e9;
+  border: 3px solid #111;
+  border-bottom-color: #4d473d;
+  font: 900 clamp(13px, 1.6vw, 20px)/1 var(--mono);
+  letter-spacing: .04em;
+  text-transform: none;
+}
+
+.system-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.system-title i {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #f4d600;
+  box-shadow: 0 0 0 2px #1c1800;
+}
+
+.resolution-controls {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: clamp(11px, 1.25vw, 16px);
+  text-transform: uppercase;
+}
+
+.resolution-button {
+  appearance: none;
+  border: 2px solid #6f6757;
+  background: #eee6d7;
+  color: #111;
+  padding: 5px 14px 4px;
+  box-shadow: 3px 3px 0 rgba(255,255,255,.30), inset 0 0 0 1px rgba(0,0,0,.25);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.resolution-button:hover,
+.resolution-button:focus-visible {
+  outline: 2px solid #f4d600;
+  outline-offset: 2px;
+}
+
+.resolution-button.is-active,
+.resolution-button[aria-pressed="true"] {
+  background: #f4d600;
+  border-color: #fff2a0;
+  box-shadow: 3px 3px 0 #574c00, inset 0 0 0 2px rgba(0,0,0,.25);
+}
+
+.resolution-divider { color: #f8f5e9; }
+
+.lowland-world {
+  z-index: 0 !important;
+  background:
+    linear-gradient(180deg, rgba(198,225,230,.10), rgba(116,150,78,.30)),
+    url("assets/lowland-countryside-v21.png") center center / cover no-repeat !important;
+}
+
+body.high-resolution .lowland-world,
+body:not(.low-resolution) .lowland-world {
+  opacity: 0 !important;
+}
+
+body.low-resolution .lowland-world {
+  opacity: 1 !important;
+}
+
+body.low-resolution {
+  min-height: 100vh;
+  background: #a7c27a !important;
+  overflow-x: hidden;
+}
+
+/* Everything in the website, except the persistent top strip and the campus map itself, disappears. */
+body.low-resolution .skip-link,
+body.low-resolution .site-header,
+body.low-resolution .left-rail,
+body.low-resolution .main-content,
+body.low-resolution .right-rail,
+body.low-resolution .site-footer,
+body.low-resolution .wide-footer-widgets,
+body.low-resolution .hero-map > .panel-title,
+body.low-resolution .hero-map > .map-footer,
+body.low-resolution .campus-map-mobile {
+  animation: fizzleAway 860ms steps(8, end) both !important;
+  pointer-events: none !important;
+}
+
+body.low-resolution.low-resolution-settled .skip-link,
+body.low-resolution.low-resolution-settled .site-header,
+body.low-resolution.low-resolution-settled .left-rail,
+body.low-resolution.low-resolution-settled .main-content,
+body.low-resolution.low-resolution-settled .right-rail,
+body.low-resolution.low-resolution-settled .site-footer,
+body.low-resolution.low-resolution-settled .wide-footer-widgets,
+body.low-resolution.low-resolution-settled .hero-map > .panel-title,
+body.low-resolution.low-resolution-settled .hero-map > .map-footer,
+body.low-resolution.low-resolution-settled .campus-map-mobile {
+  display: none !important;
+}
+
+body.low-resolution .page-grid {
+  position: relative !important;
+  z-index: 3 !important;
+  display: block !important;
+  width: min(1080px, calc(100% - 28px)) !important;
+  margin: clamp(42px, 7vw, 96px) auto !important;
+}
+
+body.low-resolution .hero-map {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.low-resolution .office-park-stage {
+  display: block !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+body.low-resolution .campus-map-desktop,
+body.low-resolution .office-park-board.campus-map-desktop {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  aspect-ratio: 1672 / 941 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow:
+    0 0 42px 20px rgba(129, 165, 83, .50),
+    0 20px 70px rgba(27, 61, 22, .26) !important;
+  overflow: hidden !important;
+}
+
+body.low-resolution .office-park-board.campus-map-desktop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 70px 34px rgba(134, 167, 83, .42),
+    inset 0 0 18px 4px rgba(235, 245, 204, .25);
+}
+
+body.low-resolution .office-park-board.campus-map-desktop::after {
+  display: none !important;
+}
+
+body.low-resolution .generated-office-park-map--high {
+  opacity: 0 !important;
+}
+
+body.low-resolution .generated-office-park-map--low {
+  opacity: 1 !important;
+}
+
+body.high-resolution .generated-office-park-map--high,
+body:not(.low-resolution) .generated-office-park-map--high {
+  opacity: 1 !important;
+}
+
+body.high-resolution .generated-office-park-map--low,
+body:not(.low-resolution) .generated-office-park-map--low {
+  opacity: 0 !important;
+}
+
+body.low-resolution .town-node {
+  z-index: 9 !important;
+}
+
+@media (max-width: 760px) {
+  .system-strip {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 9px 10px;
+  }
+
+  .resolution-controls {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .resolution-button {
+    padding: 5px 10px 4px;
+  }
+
+  body.low-resolution .page-grid {
+    width: min(100% - 16px, 760px) !important;
+    margin-top: 18px !important;
+  }
+
+  body.low-resolution .office-park-board .map-marker {
+    width: 34px !important;
+    height: 32px !important;
+  }
+
+  body.low-resolution .office-park-board .town-node b {
+    display: none !important;
+  }
+}
+
+
+/* === v22: slower, more fluid low-resolution dissolve + seamless campus-frame background ===
+   The low-resolution mode now fades more gradually, with the new countryside frame image
+   centered behind the persistent campus rectangle so the surviving hero feels embedded in
+   the landscape instead of floating on top of it. */
+.lowland-world {
+  background:
+    linear-gradient(180deg, rgba(210,231,233,.05), rgba(162,190,119,.18)),
+    url("assets/lowland-campus-frame-v22.png") center 54% / cover no-repeat !important;
+  transition: opacity 1450ms ease-in-out !important;
+}
+
+.lowland-fizzle {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0) 0 2px, rgba(255,255,255,.10) 3px 4px),
+    radial-gradient(circle at 18% 30%, rgba(255,255,255,.32), transparent 7%),
+    radial-gradient(circle at 72% 44%, rgba(255,255,255,.24), transparent 6%),
+    radial-gradient(circle at 84% 72%, rgba(255,255,255,.18), transparent 5%);
+}
+
+.generated-office-park-map {
+  transition: opacity 1550ms ease-in-out, filter 1550ms ease-in-out !important;
+}
+
+body.low-resolution.low-resolution-entering .lowland-fizzle {
+  animation: lowlandStaticBurstSoft 1450ms ease-out both !important;
+}
+
+body.low-resolution .site-header,
+body.low-resolution .left-rail,
+body.low-resolution .main-content,
+body.low-resolution .right-rail,
+body.low-resolution .site-footer,
+body.low-resolution .wide-footer-widgets,
+body.low-resolution .hero-map > .panel-title,
+body.low-resolution .hero-map > .map-footer,
+body.low-resolution .campus-map-mobile {
+  animation: fizzleAwaySoft 1650ms ease-in-out both !important;
+}
+
+body.low-resolution .page-grid {
+  width: min(1220px, calc(100% - 26px)) !important;
+  margin: clamp(14px, 2.5vw, 28px) auto clamp(26px, 4vw, 52px) !important;
+}
+
+body.low-resolution .hero-map {
+  position: relative;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+}
+
+body.low-resolution .office-park-stage {
+  padding: clamp(26px, 4.8vw, 56px) clamp(18px, 3vw, 34px) !important;
+  min-height: clamp(760px, 76vh, 980px) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.low-resolution .campus-map-desktop,
+body.low-resolution .office-park-board.campus-map-desktop {
+  width: min(100%, 920px) !important;
+  max-width: 920px !important;
+  border: 1px solid rgba(47, 80, 35, .42) !important;
+  box-shadow:
+    0 0 0 1px rgba(236, 245, 214, .22),
+    0 12px 42px rgba(49, 73, 27, .22),
+    0 0 80px rgba(84, 127, 53, .12) !important;
+}
+
+body.low-resolution .office-park-board.campus-map-desktop::before {
+  box-shadow:
+    inset 0 0 24px 12px rgba(143, 174, 92, .10),
+    inset 0 0 8px 1px rgba(248, 244, 209, .15) !important;
+}
+
+body.low-resolution .town-node b {
+  transition: background-color 220ms ease, transform 220ms ease;
+}
+
+@keyframes fizzleAwaySoft {
+  0% {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0) scale(1);
+    clip-path: inset(0 0 0 0);
+  }
+  22% {
+    opacity: .82;
+    filter: saturate(.86) contrast(1.18) brightness(1.02);
+    transform: translateY(1px) scale(.998);
+    clip-path: inset(1% 0 1% 0);
+  }
+  48% {
+    opacity: .52;
+    filter: grayscale(.28) saturate(.42) contrast(1.28) brightness(1.07);
+    transform: translateY(3px) scale(.996);
+    clip-path: inset(8% 0 10% 0);
+  }
+  74% {
+    opacity: .22;
+    filter: blur(1px) grayscale(.55) contrast(1.36) brightness(1.12);
+    transform: translateY(6px) scale(.993);
+    clip-path: inset(18% 0 24% 0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(3px) grayscale(.92) saturate(0) brightness(1.18);
+    transform: translateY(12px) scale(.988);
+    clip-path: inset(36% 0 42% 0);
+  }
+}
+
+@keyframes lowlandStaticBurstSoft {
+  0% { opacity: 0; transform: translateX(0) scale(1); }
+  10% { opacity: .34; transform: translateX(-2px) scale(1.004); }
+  26% { opacity: .18; transform: translateX(1px) scale(1.002); }
+  44% { opacity: .24; transform: translateX(-1px) scale(1.001); }
+  70% { opacity: .10; transform: translateX(2px) scale(1); }
+  100% { opacity: 0; transform: translateX(0) scale(1); }
+}
+
+@media (max-width: 760px) {
+  .lowland-world {
+    background-position: center 46% !important;
+  }
+
+  body.low-resolution .page-grid {
+    width: min(100% - 12px, 760px) !important;
+    margin-top: 8px !important;
+  }
+
+  body.low-resolution .office-park-stage {
+    min-height: auto !important;
+    padding: 12px 8px 18px !important;
+  }
+
+  body.low-resolution .campus-map-desktop,
+  body.low-resolution .office-park-board.campus-map-desktop {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+
+/* === v23: integrated low-resolution countryside mode ===
+   Uses a matching countryside surround image with an open center and a
+   campus image whose roads have dissolved into grass, so the low-resolution
+   mode reads as one continuous world instead of a framed insert. */
+
+@keyframes fizzleAwaySoft {
+  0% { opacity: 1; filter: none; transform: none; }
+  30% { opacity: .92; filter: saturate(.9) contrast(1.02); }
+  55% { opacity: .68; filter: blur(.8px) saturate(.78); transform: translateY(3px) scale(.995); }
+  100% { opacity: 0; filter: blur(4px) saturate(.4); transform: translateY(14px) scale(.985); visibility: hidden; }
+}
+
+/* Disable the older fixed-world background so the countryside and the campus
+   can align inside one coordinated scene block. */
+.lowland-world,
+.lowland-fizzle {
+  display: none !important;
+}
+
+body.low-resolution {
+  background: #9dbb73 !important;
+  min-height: 100vh;
+}
+
+body.low-resolution .skip-link,
+body.low-resolution .site-header,
+body.low-resolution .left-rail,
+body.low-resolution .main-content,
+body.low-resolution .right-rail,
+body.low-resolution .site-footer,
+body.low-resolution .wide-footer-widgets,
+body.low-resolution .hero-map > .panel-title,
+body.low-resolution .hero-map > .map-footer,
+body.low-resolution .campus-map-mobile {
+  animation: fizzleAwaySoft 1.7s ease forwards !important;
+  pointer-events: none !important;
+}
+
+body.low-resolution.low-resolution-settled .skip-link,
+body.low-resolution.low-resolution-settled .site-header,
+body.low-resolution.low-resolution-settled .left-rail,
+body.low-resolution.low-resolution-settled .main-content,
+body.low-resolution.low-resolution-settled .right-rail,
+body.low-resolution.low-resolution-settled .site-footer,
+body.low-resolution.low-resolution-settled .wide-footer-widgets,
+body.low-resolution.low-resolution-settled .hero-map > .panel-title,
+body.low-resolution.low-resolution-settled .hero-map > .map-footer,
+body.low-resolution.low-resolution-settled .campus-map-mobile {
+  display: none !important;
+}
+
+body.low-resolution .page-grid {
+  display: block !important;
+  width: min(1500px, calc(100% - 18px)) !important;
+  margin: 10px auto 18px !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+body.low-resolution .hero-map {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  min-height: calc(100vh - 66px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 3px solid var(--line) !important;
+  box-shadow: var(--shadow) !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(180deg, rgba(232,241,214,.18), rgba(150,180,101,.08)),
+    url("assets/lowland-countryside-v23.png") center center / cover no-repeat !important;
+}
+
+body.low-resolution .office-park-stage {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  padding: clamp(18px, 4vw, 38px) !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+body.low-resolution .campus-map-desktop,
+body.low-resolution .office-park-board.campus-map-desktop {
+  position: relative !important;
+  display: block !important;
+  width: min(1080px, 82vw) !important;
+  max-width: 1080px !important;
+  min-width: 0 !important;
+  aspect-ratio: 1672 / 941 !important;
+  margin: 0 auto !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow:
+    0 0 0 1px rgba(51, 58, 32, .28),
+    0 0 0 10px rgba(124, 156, 81, .10),
+    0 24px 58px rgba(28, 51, 18, .28) !important;
+  overflow: hidden !important;
+}
+
+body.low-resolution .campus-map-desktop::before,
+body.low-resolution .office-park-board.campus-map-desktop::before,
+body.low-resolution .campus-map-desktop::after,
+body.low-resolution .office-park-board.campus-map-desktop::after {
+  display: none !important;
+}
+
+body.low-resolution .office-map-art.generated-office-park-map,
+body.low-resolution .campus-map-desktop .generated-office-park-map {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+body.low-resolution .generated-office-park-map--high {
+  opacity: 0 !important;
+}
+
+body.low-resolution .generated-office-park-map--low {
+  opacity: 1 !important;
+}
+
+body.low-resolution .town-node {
+  transition: opacity .28s ease, filter .28s ease !important;
+}
+
+body.low-resolution .town-node:hover,
+body.low-resolution .town-node:focus-visible {
+  transform: none !important;
+  filter: brightness(1.06) saturate(1.06);
+}
+
+@media (max-width: 1100px) {
+  body.low-resolution .hero-map {
+    min-height: calc(100vh - 64px) !important;
+  }
+
+  body.low-resolution .office-park-stage {
+    padding: 18px !important;
+  }
+
+  body.low-resolution .campus-map-desktop,
+  body.low-resolution .office-park-board.campus-map-desktop {
+    width: min(100%, 980px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.low-resolution .page-grid {
+    width: calc(100% - 10px) !important;
+    margin: 6px auto 10px !important;
+  }
+
+  body.low-resolution .hero-map {
+    min-height: calc(100vh - 56px) !important;
+    background-position: center center !important;
+    border-width: 2px !important;
+  }
+
+  body.low-resolution .office-park-stage {
+    align-items: center !important;
+    padding: 10px !important;
+  }
+
+  body.low-resolution .campus-map-desktop,
+  body.low-resolution .office-park-board.campus-map-desktop {
+    width: 100% !important;
+    box-shadow:
+      0 0 0 1px rgba(51,58,32,.22),
+      0 14px 34px rgba(28,51,18,.20) !important;
+  }
+}
+
+
+/* === v24: matched landscape-frame integration ===
+   The low-res world now fills the whole viewport with the new landscape frame.
+   The campus sits inside the open center with softened/feathered edges so it
+   reads less like a pasted screenshot and more like an inserted simulation tile. */
+body.low-resolution {
+  background: #8fb167 !important;
+}
+
+body.low-resolution .page-grid {
+  width: 100vw !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+body.low-resolution .hero-map {
+  width: 100vw !important;
+  max-width: none !important;
+  min-height: calc(100vh - 39px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(180deg, rgba(231, 242, 210, .06), rgba(112, 145, 73, .12)),
+    url("assets/lowland-campus-frame-v24.png") center center / cover no-repeat !important;
+}
+
+body.low-resolution .office-park-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  overflow: visible !important;
+}
+
+body.low-resolution .campus-map-desktop,
+body.low-resolution .office-park-board.campus-map-desktop {
+  width: min(72vw, 1120px) !important;
+  max-width: 1120px !important;
+  min-width: 0 !important;
+  aspect-ratio: 1672 / 941 !important;
+  margin: 4vh auto 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow:
+    0 0 0 1px rgba(93, 121, 55, .18),
+    0 0 38px 18px rgba(126, 160, 81, .30),
+    0 18px 44px rgba(33, 55, 21, .18) !important;
+  overflow: hidden !important;
+  border-radius: 4px !important;
+}
+
+body.low-resolution .campus-map-desktop::before,
+body.low-resolution .office-park-board.campus-map-desktop::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 7 !important;
+  pointer-events: none !important;
+  box-shadow:
+    inset 0 0 42px 28px rgba(126, 160, 81, .42),
+    inset 0 0 14px 4px rgba(233, 244, 197, .18) !important;
+}
+
+body.low-resolution .campus-map-desktop::after,
+body.low-resolution .office-park-board.campus-map-desktop::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: -3px !important;
+  z-index: 8 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(to right, rgba(136, 169, 86, .62), transparent 7%, transparent 93%, rgba(136, 169, 86, .62)),
+    linear-gradient(to bottom, rgba(136, 169, 86, .58), transparent 8%, transparent 92%, rgba(136, 169, 86, .58)) !important;
+  mix-blend-mode: soft-light;
+}
+
+body.low-resolution .office-map-art.generated-office-park-map,
+body.low-resolution .campus-map-desktop .generated-office-park-map {
+  filter: saturate(1.03) contrast(.98) brightness(1.01) !important;
+}
+
+body.low-resolution .town-node {
+  z-index: 12 !important;
+}
+
+body.low-resolution .office-park-board .map-marker {
+  filter:
+    drop-shadow(1px 1px 0 rgba(241, 236, 197, .65))
+    drop-shadow(2px 3px 0 rgba(39, 57, 25, .32)) !important;
+}
+
+body.low-resolution .office-park-board .town-node b {
+  background: rgba(232, 226, 187, .90) !important;
+  border-color: rgba(44, 55, 30, .78) !important;
+  box-shadow: 2px 2px 0 rgba(35, 55, 22, .30) !important;
+}
+
+@media (max-width: 1200px) {
+  body.low-resolution .campus-map-desktop,
+  body.low-resolution .office-park-board.campus-map-desktop {
+    width: min(84vw, 1000px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.low-resolution .hero-map {
+    min-height: calc(100vh - 49px) !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  body.low-resolution .office-park-stage {
+    place-items: center !important;
+  }
+
+  body.low-resolution .campus-map-desktop,
+  body.low-resolution .office-park-board.campus-map-desktop {
+    width: min(96vw, 720px) !important;
+    margin-top: 0 !important;
+  }
+
+  body.low-resolution .office-park-board .map-marker {
+    width: 34px !important;
+    height: 32px !important;
+  }
+
+  body.low-resolution .office-park-board .town-node b {
+    display: none !important;
+  }
+}
+
+/* === v28: low-res seamless background correction ===
+   This replaces the previous low-res staging logic without rebuilding the page.
+   LOW RES now uses one integrated scene image as the stage background, keeps the
+   hero marker layer fixed in the same place, and fades the rest of the website
+   without adding the delayed settled-state jump. */
+
+:root {
+  --v28-strip-height: 48px;
+  --v28-campus-left: 17%;
+  --v28-campus-top: 12%;
+  --v28-campus-width: 68%;
+  --v28-campus-height: 76%;
+}
+
+.system-strip {
+  min-height: var(--v28-strip-height);
+}
+
+body.low-resolution {
+  overflow-x: hidden !important;
+  background: #96b66e !important;
+}
+
+body.low-resolution .lowland-world,
+body.low-resolution .lowland-fizzle {
+  display: none !important;
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+body.low-resolution .system-strip {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 5000 !important;
+}
+
+/* Fade the portal around the hero. Do not display:none and do not collapse the
+   document, because that was what made the hero jump upward after transition. */
+body.low-resolution .site-header,
+body.low-resolution .left-rail,
+body.low-resolution .main-content,
+body.low-resolution .right-rail,
+body.low-resolution .site-footer,
+body.low-resolution .wide-footer-widgets,
+body.low-resolution .hero-map > .panel-title,
+body.low-resolution .hero-map > .map-footer,
+body.low-resolution .campus-map-mobile {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  animation: none !important;
+  filter: blur(1.5px) saturate(.85) !important;
+  transition: opacity 900ms ease, filter 900ms ease !important;
+}
+
+body.low-resolution.low-resolution-settled .site-header,
+body.low-resolution.low-resolution-settled .left-rail,
+body.low-resolution.low-resolution-settled .main-content,
+body.low-resolution.low-resolution-settled .right-rail,
+body.low-resolution.low-resolution-settled .site-footer,
+body.low-resolution.low-resolution-settled .wide-footer-widgets,
+body.low-resolution.low-resolution-settled .hero-map > .panel-title,
+body.low-resolution.low-resolution-settled .hero-map > .map-footer,
+body.low-resolution.low-resolution-settled .campus-map-mobile {
+  display: initial !important;
+}
+
+body.low-resolution .page-grid {
+  width: 100vw !important;
+  max-width: none !important;
+  min-height: calc(100vh - var(--v28-strip-height)) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* The integrated scene image already contains the campus and surrounding forest.
+   It is stretched as one layer so browser zoom/resize keeps the campus and
+   surrounding landscape locked together. */
+body.low-resolution .hero-map {
+  position: relative !important;
+  width: 100vw !important;
+  max-width: none !important;
+  min-height: calc(100vh - var(--v28-strip-height)) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(rgba(185, 211, 132, .08), rgba(91, 129, 55, .10)),
+    url("assets/lowres-seamless-campus-world-v28.png") 50% 50% / 100% 100% no-repeat !important;
+}
+
+body.low-resolution .office-park-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+/* In LOW RES the visual campus is in the unified background. The board becomes
+   a transparent alignment layer for pins/click targets only, so there is no
+   second image edge to mismatch against the landscape. */
+body.low-resolution .campus-map-desktop,
+body.low-resolution .office-park-board.campus-map-desktop {
+  display: block !important;
+  position: absolute !important;
+  left: var(--v28-campus-left) !important;
+  top: var(--v28-campus-top) !important;
+  width: var(--v28-campus-width) !important;
+  height: var(--v28-campus-height) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+body.low-resolution .office-map-art.generated-office-park-map,
+body.low-resolution .campus-map-desktop .generated-office-park-map,
+body.low-resolution .generated-office-park-map--high,
+body.low-resolution .generated-office-park-map--low {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+body.low-resolution .campus-map-desktop::before,
+body.low-resolution .office-park-board.campus-map-desktop::before,
+body.low-resolution .campus-map-desktop::after,
+body.low-resolution .office-park-board.campus-map-desktop::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.low-resolution .town-node {
+  z-index: 20 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(2px 3px 0 rgba(24, 38, 16, .34)) !important;
+}
+
+body.low-resolution .office-park-board .map-marker,
+body.low-resolution .office-park-board .map-icon-img {
+  filter: drop-shadow(1px 1px 0 rgba(245, 238, 192, .72)) drop-shadow(2px 3px 0 rgba(22, 34, 14, .30)) !important;
+}
+
+body.low-resolution .office-park-board .town-node b {
+  background: rgba(238, 231, 190, .92) !important;
+  border-color: rgba(40, 49, 28, .88) !important;
+  box-shadow: 2px 2px 0 rgba(24, 38, 16, .34) !important;
+}
+
+body.low-resolution .town-node:hover,
+body.low-resolution .town-node:focus-visible,
+body.low-resolution .office-park-board .town-node:hover,
+body.low-resolution .office-park-board .town-node:focus-visible {
+  transform: translate(-50%, -50%) !important;
+  background: transparent !important;
+}
+
+body.high-resolution .generated-office-park-map--high,
+body:not(.low-resolution) .generated-office-park-map--high {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+body.high-resolution .generated-office-park-map--low,
+body:not(.low-resolution) .generated-office-park-map--low {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --v28-strip-height: 72px;
+    --v28-campus-left: 9%;
+    --v28-campus-top: 13%;
+    --v28-campus-width: 82%;
+    --v28-campus-height: 74%;
+  }
+
+  body.low-resolution .hero-map {
+    min-height: calc(100vh - var(--v28-strip-height)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --v28-strip-height: 88px;
+    --v28-campus-left: 4%;
+    --v28-campus-top: 18%;
+    --v28-campus-width: 92%;
+    --v28-campus-height: 62%;
+  }
+
+  body.low-resolution .town-node b {
+    display: none !important;
+  }
+}
+
+/* v28.1: remove hidden header from low-res document flow immediately, rather
+   than after a timer. This prevents the post-transition upward jump while still
+   letting the header visually fade away. */
+body.low-resolution .site-header {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: var(--v28-strip-height) !important;
+  margin: 0 auto !important;
+  z-index: 1 !important;
 }
